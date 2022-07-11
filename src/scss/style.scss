@@ -1,0 +1,115 @@
+@use "sass:math";
+
+// Миксины
+@import "./mixins";
+
+// Шрифты
+// @include font('Gilroy', normal, 400, '../resources/fonts/Gilroy/Gilroy-Regular.woff2');
+
+// Переменные
+// Текст
+$text-primary: #333;
+$text-second: brig-color($text-primary, .7);
+$text-accent: #FFCD6D;
+$link-active: brig-color(#FFCD6D, active);
+$light: #fff;
+
+// Задний фон разделов
+// $frame-dark: #080A0A;
+// $frame-light: #0E1010;
+
+// Обводка
+$border-line: #cecece;
+$input-placeholder: brig-color(#000, .3);
+
+$error: #EB5757;
+
+// Текстовые поля
+$tf-label: $text-second;
+
+// ================ Colors End ================
+
+
+// ================ Responsive Start ================
+$min-width: 320px;
+$max-width: 1920px;
+$max-width-container: 1200;
+$container-padding: 48;
+$container-width: $max-width-container + $container-padding;
+
+$laptop-l: 1500px;
+$laptop: 1100px;
+$tablet: 800px;
+$mobile-l: 450px;
+$mobile-m: 390px;
+$mobile-s: 330px;
+$hide-menu: $tablet;
+// ================ Responsive End ================
+
+
+// ================ Other Start ================
+$ff-main: sans-serif;
+$tr: .3s;
+// ================ Other End ================
+//========================================================================================================================================================
+
+// Сброс CSS
+@import "./reset";
+
+body {
+
+    ._lock & {
+        overflow: hidden;
+		touch-action: none;
+    }
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    & > .content {
+        flex: 1 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+/*
+(i) Стили будут применяться ко 
+всем классам содержащим *__container
+Например header__container, main__container и т.д.
+*/
+[class*="__container"] {
+    @if ($max-width-container>0) {
+        max-width: rem($max-width-container);
+        box-sizing: content-box;
+        margin: 0 auto;
+    }
+    @if ($container-padding>0) {
+        padding: 0 rem(math.div($container-padding, 2));
+    }
+
+    @media (max-width: $mobile-l) {
+        padding: 0 rem(16);
+    }
+}
+
+// Общие стили проекта
+@import "./common";
+
+// Базовые стили, шаблоны, заготовки
+@import "./base";
+
+// Стили частоиспользуемых секций
+@import "./sections/header";
+@import "./sections/main";
+@import "./sections/footer";
+
+
+// Стили для отдельных страниц
+// @import "./pages/";
