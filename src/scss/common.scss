@@ -1,22 +1,25 @@
-// Бургер 
+// Бургер
 .burger {
+	display: none;
     position: relative;
-    width: 40px;
-    height: 40px;
+    width: 56px;
+	aspect-ratio: 1;
+	background: $text-primary;
+	border-radius: 50%;
     transition: $tr;
 
     & span {
         position: absolute;
         top: 50%;
         left: 50%;
-        width: 40%;
+        width: 54%;
         height: 2px;
         display: block;
-        background: $text-primary;
+        background: $light;
         transition: $tr;
 
         &:nth-child(1) {
-            transform: translate(-50%, calc(-50% - 5px));
+            transform: translate(-50%, calc(-50% - 7px));
         }
 
         &:nth-child(2) {
@@ -24,7 +27,7 @@
         }
 
         &:nth-child(3) {
-            transform: translate(-50%, calc(-50% + 5px));
+            transform: translate(-50%, calc(-50% + 7px));
         }
     }
 
@@ -35,11 +38,11 @@
             &:nth-child(1) {
                 transform: translate(-50%, -50%) rotate(45deg);
             }
-    
+
             &:nth-child(2) {
                 width: 0;
             }
-    
+
             &:nth-child(3) {
                 transform: translate(-50%, -50%) rotate(-45deg);
             }
@@ -49,13 +52,89 @@
 //========================================================================================================================================================
 
 
+// Белый контур с красной точкой
+// Класс элемента, у которого есть контур
+.has-contour {
+	--size-circle: 22px;
+
+	position: relative;
+
+	&.has-circle {
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 11%;
+			right: 2%;
+			display: block;
+			width: var(--size-circle);
+			aspect-ratio: 1;
+			background: $accent;
+			border-radius: 50%;
+		}
+	}
+}
+
+// Класс контура
+.contour {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		-webkit-mask: left/contain no-repeat url('data:image/svg+xml,%3Csvg width=\"56\" height=\"213\" viewBox=\"0 0 56 213\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cpath d=\"M1.5 158.213V211.213H54.5M1.5 54.2134V1.21338H54.5\" stroke=\"%23F2F4F6\" stroke-width=\"2\" stroke-linecap=\"round\"/%3E%3C/svg%3E');
+		mask: left/contain no-repeat url('data:image/svg+xml,%3Csvg width=\"56\" height=\"213\" viewBox=\"0 0 56 213\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cpath d=\"M1.5 158.213V211.213H54.5M1.5 54.2134V1.21338H54.5\" stroke=\"%23F2F4F6\" stroke-width=\"2\" stroke-linecap=\"round\"/%3E%3C/svg%3E');
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		-webkit-mask: right/contain no-repeat url('data:image/svg+xml,%3Csvg width=\"57\" height=\"212\" viewBox=\"0 0 57 212\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cline x1=\"56\" y1=\"158\" x2=\"56\" y2=\"211\" stroke=\"%23F2F4F6\" stroke-width=\"2\" stroke-linecap=\"round\"/%3E%3Cline x1=\"1\" y1=\"211\" x2=\"55\" y2=\"211\" stroke=\"%23F2F4F6\" stroke-width=\"2\" stroke-linecap=\"round\"/%3E%3Cline x1=\"56\" y1=\"1\" x2=\"56\" y2=\"54\" stroke=\"%23F2F4F6\" stroke-width=\"2\" stroke-linecap=\"round\"/%3E%3Cline x1=\"1\" y1=\"1\" x2=\"55\" y2=\"1\" stroke=\"%23F2F4F6\" stroke-width=\"2\" stroke-linecap=\"round\"/%3E%3C/svg%3E');
+		mask: right/contain no-repeat url('data:image/svg+xml,%3Csvg width=\"57\" height=\"212\" viewBox=\"0 0 57 212\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cline x1=\"56\" y1=\"158\" x2=\"56\" y2=\"211\" stroke=\"%23F2F4F6\" stroke-width=\"2\" stroke-linecap=\"round\"/%3E%3Cline x1=\"1\" y1=\"211\" x2=\"55\" y2=\"211\" stroke=\"%23F2F4F6\" stroke-width=\"2\" stroke-linecap=\"round\"/%3E%3Cline x1=\"56\" y1=\"1\" x2=\"56\" y2=\"54\" stroke=\"%23F2F4F6\" stroke-width=\"2\" stroke-linecap=\"round\"/%3E%3Cline x1=\"1\" y1=\"1\" x2=\"55\" y2=\"1\" stroke=\"%23F2F4F6\" stroke-width=\"2\" stroke-linecap=\"round\"/%3E%3C/svg%3E');
+	}
+
+	&.is-light {
+
+		&::after,
+		&::before {
+			background-color: $light;
+		}
+	}
+
+	&.is-accent {
+
+		&::after,
+		&::before {
+			background-color: $accent;
+		}
+	}
+}
+
 // Раздел
 .section {
     margin: 120px 0;
 
     @media (max-width: $mobile-l) {
-        margin: 80px 0;
+        margin: 50px 0;
     }
+}
+
+.is-dark {
+
 }
 
 .section_ms {
@@ -75,22 +154,39 @@
 
 // Шапка раздела
 .s-header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
     margin-bottom: 40px;
 
     @media (max-width: $mobile-l) {
-        margin-bottom: 30px;
+        // margin-bottom: 30px;
     }
 }
 
 .s-header__title {
-    
+	font-size: 60px;
+	font-weight: 500;
+
+	@media (max-width: $tablet) {
+		font-size: 45px;
+	}
+
+	@media (max-width: $mobile-l) {
+		font-size: 30px;
+	}
+
+	@media (max-width: $mobile-m) {
+		font-size: 26px;
+	}
 }
 
 .s-header__subtitle {
-    
+
 }
 
 .s-header__text {
-    
+
 }
 //========================================================================================================================================================

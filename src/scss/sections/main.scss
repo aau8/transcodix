@@ -1,0 +1,126 @@
+.main {
+	position: relative;
+	width: 100%;
+	// min-height: 700px;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	background: center/cover no-repeat $text-primary url('@img/bgs/main.jpg');
+	color: $light;
+
+	@media (max-width: 900px) {
+		background: -2px center/cover no-repeat $text-primary url('@img/bgs/main-mob.jpg');
+	}
+
+	@media (max-width: $mobile-l) {
+		// background-position: -60px center;
+	}
+}
+
+.main__container {
+	max-width: 1060px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding-top: 90px;
+	padding-bottom: 50px;
+	// margin: auto 0;
+
+	@media (max-width: 900px) {
+		padding-top: 70px;
+	}
+}
+
+.main__title {
+	width: 100%;
+	font-size: 73px;
+	font-weight: 300;
+	padding: 0 24px;
+
+	@media (max-width: $laptop) {
+		font-size: 60px;
+	}
+
+	@media (max-width: 900px) {
+		font-size: 50px;
+	}
+
+	@media (max-width: $tablet) {
+		--size-circle: 14px;
+
+		font-size: 42px;
+	}
+
+	@media (max-width: 600px) {
+		--size-circle: 12px;
+
+		font-size: 30px;
+	}
+
+	@media (max-width: 400px) {
+		--size-circle: 10px;
+
+		font-size: 30px;
+	}
+}
+
+.main-advant {
+	margin-top: 38px;
+}
+
+.main-advant__list {
+	display: flex;
+	align-items: center;
+}
+
+.main-advant__item {
+	font-size: 28px;
+	font-weight: 300;
+
+	&:not(:last-child) {
+
+		&::after {
+			content: '';
+			display: inline-block;
+			width: 1px;
+			height: 20px;
+			background: $light;
+			margin: 0 110px;
+
+			@media (max-width: $laptop) {
+				margin: 0 80px;
+			}
+
+			@media (max-width: 900px) {
+				margin: 0 50px;
+			}
+
+			@media (max-width: 600px) {
+				margin: 0 30px;
+			}
+
+			@media (max-width: $mobile-l) {
+				height: 14px;
+				margin: 0 20px;
+			}
+		}
+	}
+
+	@media (max-width: 900px) {
+		font-size: 24px;
+	}
+
+	@media (max-width: 600px) {
+		// font-size: 20px;
+	}
+
+	@media (max-width: $mobile-m) {
+		font-size: 18px;
+	}
+}
+
+.main__cta {
+	width: 100%;
+	margin-top: 60px;
+}

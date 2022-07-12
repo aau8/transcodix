@@ -4,28 +4,31 @@
 @import "./mixins";
 
 // Шрифты
-// @include font('Gilroy', normal, 400, '../resources/fonts/Gilroy/Gilroy-Regular.woff2');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&display=swap');
 
 // Переменные
 // Текст
-$text-primary: #333;
-$text-second: brig-color($text-primary, .7);
-$text-accent: #FFCD6D;
-$link-active: brig-color(#FFCD6D, active);
-$light: #fff;
+$text-primary: #343434;
+// $text-second: brig-color($text-primary, .7);
+// $text-accent: #FFCD6D;
+// $link-active: brig-color(#FFCD6D, active);
+$accent: #FF3F3F;
+$light: #F2F4F6;
 
 // Задний фон разделов
 // $frame-dark: #080A0A;
-// $frame-light: #0E1010;
+// $frame-light: #F2F4F6;
 
 // Обводка
-$border-line: #cecece;
-$input-placeholder: brig-color(#000, .3);
+// $border-line: #cecece;
+// $input-placeholder: brig-color(#000, .3);
+$radius-s: 4px;
+$radius-m: 20px;
 
 $error: #EB5757;
 
 // Текстовые поля
-$tf-label: $text-second;
+// $tf-label: $text-second;
 
 // ================ Colors End ================
 
@@ -36,6 +39,10 @@ $max-width: 1920px;
 $max-width-container: 1200;
 $container-padding: 48;
 $container-width: $max-width-container + $container-padding;
+
+:root {
+	--container-padding: #{math.div($container-padding, 2) + 'px'};
+}
 
 $laptop-l: 1500px;
 $laptop: 1100px;
@@ -48,7 +55,7 @@ $hide-menu: $tablet;
 
 
 // ================ Other Start ================
-$ff-main: sans-serif;
+$ff-main: 'Manrope', sans-serif;
 $tr: .3s;
 // ================ Other End ================
 //========================================================================================================================================================
@@ -80,22 +87,22 @@ body {
 }
 
 /*
-(i) Стили будут применяться ко 
+(i) Стили будут применяться ко
 всем классам содержащим *__container
 Например header__container, main__container и т.д.
 */
 [class*="__container"] {
     @if ($max-width-container>0) {
-        max-width: rem($max-width-container);
+        max-width: $max-width-container + px;
         box-sizing: content-box;
         margin: 0 auto;
     }
     @if ($container-padding>0) {
-        padding: 0 rem(math.div($container-padding, 2));
+        padding: 0 var(--container-padding);
     }
 
     @media (max-width: $mobile-l) {
-        padding: 0 rem(16);
+		--container-padding: 16px;
     }
 }
 
@@ -108,6 +115,9 @@ body {
 // Стили частоиспользуемых секций
 @import "./sections/header";
 @import "./sections/main";
+@import "./sections/why-us";
+@import "./sections/stream";
+@import "./sections/reviews";
 @import "./sections/footer";
 
 

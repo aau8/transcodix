@@ -1,36 +1,92 @@
 // Основной шаблон кнопки
 .btn {
-    height: 54px;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 28px;
+    font-weight: 400;
     padding: 0 50px;
-    border-radius: 50px;
+	border: none;
+	text-transform: uppercase;
     transition: $tr;
     white-space: nowrap;
     user-select: none;
 
-	@media (any-hover: hover) {
-        
-        &:hover {
-            background: #000;
-        }
-    }
+	&.is-border {
+		border: 2px solid;
+	}
+
+	&.is-light {
+		color: $text-primary;
+		background-color: $light;
+
+		&.is-border {
+			color: $light;
+			background-color: transparent;
+			border-color: $light;
+
+			&:active {
+				color: $text-primary;
+				background-color: $light;
+			}
+
+			@media (any-hover: hover) {
+
+				&:hover {
+					color: $text-primary;
+					background-color: $light;
+				}
+			}
+		}
+	}
+
+	&.is-accent {
+		color: $light;
+		background-color: $accent;
+
+		&.is-border {
+			color: $accent;
+			background-color: transparent;
+			border-color: $accent;
+		}
+	}
+
+	&.is-underline {
+		border-bottom: 1px solid $light;
+	}
+
+	@media (max-width: $laptop) {
+		height: 70px;
+		font-size: 26px;
+	}
+
+	@media (max-width: $tablet) {
+		height: 68px;
+		font-size: 24px;
+	}
+
+	@media (max-width: $mobile-l) {
+		font-size: 20px;
+	}
+
+	@media (max-width: $mobile-m) {
+		height: 60px;
+		font-size: 18px;
+	}
 }
 
 .link {
     transition: $tr;
 
     @media (any-hover: hover) {
-        
+
         &:hover {
-            color: $text-accent;
+            color: $accent;
         }
     }
 
     &:active {
-        color: brig-color($text-accent, active);
+        color: brig-color($accent, active);
     }
 }

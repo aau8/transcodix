@@ -5,13 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css?_v=20220712054042">
 </head>
 <body>
 	<div class="wrapper">
 
 		<main class="main">
-			@@include('html/header.html',{})
+			<header class="header">
+    <div class="header__container">
+		<a href="#" class="logo header__logo"><img src="./img/logo.svg" alt=""></a>
+		<div class="menu">
+			<div class="menu__wrap">
+				<button class="burger is-active menu__burger" data-menu-close><span></span><span></span><span></span></button>
+				<div class="menu__content">
+					<ul class="menu__list">
+						<li><a href="#" class="link">About us</a></li>
+						<li><a href="#" class="link">Solution</a></li>
+						<li><a href="#" class="link">Pricing</a></li>
+					</ul>
+					<div class="menu__tools">
+						<a href="#" class="link header__tools-item header__tools-item_login">Login</a>
+						<a href="#" class="link header__tools-item header__tools-item_free">Try for free</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header__tools">
+			<a href="#" class="link header__tools-item header__tools-item_login">Login</a>
+			<a href="#" class="link header__tools-item header__tools-item_free">Try for free</a>
+		</div>
+		<button class="burger header__burger" data-menu-open><span></span><span></span><span></span></button>
+	</div>
+</header>
 
 			<div class="main__container">
 				<h1 class="main__title has-contour has-circle">
@@ -75,7 +100,7 @@
 							</p>
 							<a href="#" class="btn is-accent stream__btn">try now for free</a>
 						</div>
-						<div class="stream__img"><img src="@img/streaming.png" alt=""></div>
+						<div class="stream__img"><img src="./img/streaming.png" alt=""></div>
 					</div>
 				</div>
 			</section>
@@ -87,7 +112,7 @@
 					<div class="reveiws__body">
 						<div class="reviews-card">
 							<div class="reviews-card__header">
-								<div class="reviews-card__img"><img src="@img/avatars/avatar-1.jpg" alt=""></div>
+								<div class="reviews-card__img"><img src="./img/avatars/avatar-1.jpg" alt=""></div>
 								<span class="reviews-card__title">Lisa Routh</span>
 							</div>
 							<div class="reviews-card__body">
@@ -98,7 +123,7 @@
 						</div>
 						<div class="reviews-card">
 							<div class="reviews-card__header">
-								<div class="reviews-card__img"><img src="@img/avatars/avatar-2.jpg" alt=""></div>
+								<div class="reviews-card__img"><img src="./img/avatars/avatar-2.jpg" alt=""></div>
 								<span class="reviews-card__title">Eric Norman</span>
 							</div>
 							<div class="reviews-card__body">
@@ -109,7 +134,7 @@
 						</div>
 						<div class="reviews-card">
 							<div class="reviews-card__header">
-								<div class="reviews-card__img"><img src="@img/avatars/avatar-3.jpg" alt=""></div>
+								<div class="reviews-card__img"><img src="./img/avatars/avatar-3.jpg" alt=""></div>
 								<span class="reviews-card__title">Patric Smith</span>
 							</div>
 							<div class="reviews-card__body">
@@ -123,10 +148,24 @@
 			</section>
 		</div>
 
-        @@include('html/footer.html',{})
+        <footer class="footer">
+    
+</footer>
 	</div>
 
-    @@include('html/modals.html', {})
-    <script src="./js/bundle.min.js"></script>
+    <!-- <div class="modal" data-modal-id="modal" data-close-on-bg>
+    <div class="modal__wrap">
+        <div class="modal__window">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum adipisci deserunt atque quis! Iure autem aut impedit velit? Maxime non quo voluptate porro doloribus officia ea accusamus harum ab alias!</p>
+            <button class="burger is-active modal-close" data-modal-close>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="modal__bg"></div>
+    </div>
+</div> -->
+    <script src="./js/bundle.min.js?_v=20220712054042"></script>
 </body>
 </html>
