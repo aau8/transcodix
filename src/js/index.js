@@ -11,7 +11,7 @@ import DismalModules, { acc } from "./utils/modules.js"
 // DismalModules.tabs()
 
 // Плейсхолдер текстовых полей
-// DismalModules.labelTextfield()
+DismalModules.labelTextfield()
 
 // Списки выбора
 // DismalModules.select()

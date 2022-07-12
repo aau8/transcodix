@@ -13,6 +13,7 @@ $text-primary: #343434;
 // $text-accent: #FFCD6D;
 // $link-active: brig-color(#FFCD6D, active);
 $accent: #FF3F3F;
+$accent-second: #31FDF1;
 $light: #F2F4F6;
 
 // Задний фон разделов
@@ -49,7 +50,7 @@ $laptop: 1100px;
 $tablet: 800px;
 $mobile-l: 450px;
 $mobile-m: 390px;
-$mobile-s: 330px;
+$mobile-s: 320px;
 $hide-menu: $tablet;
 // ================ Responsive End ================
 
@@ -117,6 +118,7 @@ body {
 @import "./sections/main";
 @import "./sections/why-us";
 @import "./sections/stream";
+@import "./sections/solut/solut";
 @import "./sections/reviews";
 @import "./sections/footer";
 

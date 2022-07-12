@@ -1,0 +1,41 @@
+.solut-media__body {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 48px;
+
+	@media (max-width: 600px) {
+		grid-template-columns: 1fr;
+		gap: 48px;
+	}
+}
+
+.solut-media__ill {
+	max-width: 434px;
+
+	@media (max-width: 600px) {
+		width: 73%;
+		margin: 0 auto;
+	}
+}
+
+.solut-media__content {
+	max-width: 522px;
+
+	@media (max-width: 600px) {
+		max-width: none;
+	}
+}
+
+.solut-media__text {
+
+}
+
+.solut-media__btn {
+	width: 90%;
+	margin-top: 65px;
+
+	@media (max-width: 600px) {
+		width: 100%;
+		margin-top: 37px;
+	}
+}

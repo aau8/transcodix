@@ -6,14 +6,9 @@
 	display: flex;
 	flex-direction: column;
 	background: center/cover no-repeat $text-primary url('@img/bgs/main.jpg');
-	color: $light;
 
 	@media (max-width: 900px) {
 		background: -2px center/cover no-repeat $text-primary url('@img/bgs/main-mob.jpg');
-	}
-
-	@media (max-width: $mobile-l) {
-		// background-position: -60px center;
 	}
 }
 

@@ -10,7 +10,7 @@
 <body>
 	<div class="wrapper">
 
-		<main class="main">
+		<main class="main has-bg-dark">
 			@@include('html/header.html',{})
 
 			<div class="main__container">
@@ -76,6 +76,140 @@
 							<a href="#" class="btn is-accent stream__btn">try now for free</a>
 						</div>
 						<div class="stream__img"><img src="@img/streaming.png" alt=""></div>
+					</div>
+				</div>
+			</section>
+			<section class="section solut has-bg-dark">
+				<div class="solut__wrap">
+					<div class="s-header">
+						<h2 class="s-header__title">Our solutions</h2>
+					</div>
+					<div class="solut__body">
+						<div class="solut-step solut-stream">
+							<div class="solut-stream__container">
+								<div class="solut__subheader">
+									<h3 class="solut__subtitle">Transcoding live video streaming</h3>
+								</div>
+								<div class="solut-stream__body">
+									<div class="solut-stream__ill">
+										<div class="solut-stream__ill-content">
+											<div class="solut-stream__ill-text-block has-contour has-circle">
+												<span class="solut-stream__ill-text">5 times profitable</span>
+												<span class="contour is-light solut-stream__ill-contour"></span>
+											</div>
+										</div>
+										<div class="solut-stream__ill-img">
+											<picture>
+												<source srcset="@img/ills/transcoding-mob.svg" media="(max-width: 600px)">
+												<img src="@img/ills/transcoding.svg" alt="">
+											</picture>
+										</div>
+									</div>
+									<div class="solut__content">
+										<p class="solut__text">You need it when you want your video to reach more end user during the stream.</p>
+										<p class="solut__text">Using our transcoder you can set different bitrate, modify frame size, while converting the codecs and protocols.</p>
+									</div>
+									<div class="solut__buttons">
+										<button class="btn is-accent solut__btn solut__btn-accent">Get demo</button>
+										<button class="btn is-underline solut__btn solut__btn-underline">Price calculator</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="solut-step solut-cdn">
+							<div class="solut-cdn__container">
+								<div class="solut__subheader">
+									<h3 class="solut__subtitle">Content delivery network (CDN)</h3>
+								</div>
+								<div class="solut-cdn__body">
+									<div class="solut-cdn__ills">
+										<div class="solut-cdn__ill is-without-cdn">
+											<div class="solut-cdn__ill-header">
+												<span class="solut-cdn__ill-title">Without <span>CDN</span></span>
+											</div>
+											<div class="solut-cdn__ill-body">
+												<div class="solut-cdn__ill-content">
+													<div class="solut-cdn__ill-text-block has-contour has-circle">
+														<span class="solut-cdn__ill-text">CONTENT</span>
+														<span class="contour is-light solut-cdn__ill-contour"></span>
+													</div>
+													<span class="solut-cdn__ill-what">Your <br>traffic</span>
+												</div>
+												<div class="solut-cdn__ill-img"><img src="@img/ills/without-cdn.svg" alt=""></div>
+											</div>
+										</div>
+										<div class="solut-cdn__ill is-with-cdn">
+											<div class="solut-cdn__ill-header">
+												<span class="solut-cdn__ill-title">With <span>CDN</span></span>
+											</div>
+											<div class="solut-cdn__ill-body">
+												<div class="solut-cdn__ill-content">
+													<div class="solut-cdn__ill-text-block has-contour has-circle">
+														<span class="solut-cdn__ill-text">CONTENT</span>
+														<span class="contour is-light solut-cdn__ill-contour"></span>
+													</div>
+													<span class="solut-cdn__ill-what">Your <br>traffic</span>
+												</div>
+												<div class="solut-cdn__ill-img"><img src="@img/ills/with-cdn.svg" alt=""></div>
+											</div>
+										</div>
+									</div>
+									<div class="solut__content">
+										<p class="solut__text">High content loading speed is the key to the positive client communication. The  goal of CDN is to provide faster content delivery.</p>
+										<p class="solut__text">Using the CDN protects you against DDoS attacks and saving costs because of the content delivery solutions.</p>
+									</div>
+									<div class="solut__buttons">
+										<button class="btn is-accent solut__btn solut__btn-accent">Get demo</button>
+										<button class="btn is-underline solut__btn solut__btn-underline">Price calculator</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="solut-pp">
+							<div class="solut-pp__container">
+								<div class="solut-pp__content">
+									<h3 class="solut-pp__title">Get my personal&nbsp;plan</h3>
+								</div>
+								<form action="#" class="solut-pp__form">
+									<div class="solut-pp__form-wrap">
+										<label class="tf solut-pp__tf">
+											<div class="tf__field">
+												<input type="text" name="user-">
+												<span class="tf__label">Name</span>
+											</div>
+										</label>
+										<label class="tf has-icon solut-pp__tf solut-pp__tf-phone">
+											<div class="tf__field">
+												<input type="text" name="user-">
+												<span class="tf__label">+__ (___) ___ __-__</span>
+											</div>
+										</label>
+										<label class="tf solut-pp__tf">
+											<div class="tf__field">
+												<input type="email" name="user-">
+												<span class="tf__label">E-mail</span>
+											</div>
+										</label>
+										<button class="btn is-border is-light solut-pp__form-submit">Try now</button>
+									</div>
+									<p class="solut-pp__form-correction">Here you can see our <a href="#" class="link">privacy policy</a></p>
+								</form>
+							</div>
+						</div>
+						<div class="solut-step solut-media">
+							<div class="solut-media__container">
+								<div class="solut__subheader">
+									<h3 class="solut__subtitle">Media storage <span>(Coming soon)</span></h3>
+								</div>
+								<div class="solut-media__body">
+									<div class="solut-media__ill"><img src="@img/ills/cloud-ill.svg" alt=""></div>
+									<div class="solut-media__content">
+										<p class="solut-media__text">Using the storage you get the access to different features including the security and permission settings, API integrations  and ability to manage files</p>
+										<button class="btn is-accent solut-media__btn">Notify me</button>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>

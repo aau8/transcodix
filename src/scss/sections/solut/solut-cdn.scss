@@ -1,0 +1,179 @@
+.solut-cdn__ills {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+
+	& .solut-cdn__ill {
+
+		&:nth-child(1) {
+			border-radius: $radius-m 0 0 $radius-m;
+			border-right-width: 1px;
+		}
+
+		&:nth-child(2) {
+			border-radius: 0 $radius-m $radius-m 0;
+			border-left-width: 1px;
+		}
+	}
+
+	@media (max-width: 600px) {
+		grid-template-columns: 1fr;
+		gap: 58px;
+
+		& .solut-cdn__ill {
+
+			&:nth-child(1) {
+				border: none;
+			}
+
+			&:nth-child(2) {
+				border: none;
+			}
+		}
+	}
+}
+
+.solut-cdn__ill {
+	border: 2px solid $light;
+
+	&.is-without-cdn {
+
+		& .solut-cdn__ill-what {
+			top: 25%;
+			left: 12%;
+
+			&::before {
+				right: -9px;
+				bottom: -24px;
+				transform: translate(100%, -100%) rotate(23deg);
+			}
+
+			@media (max-width: $tablet) {
+				left: 8%;
+			}
+		}
+	}
+
+	&.is-with-cdn {
+
+		& .solut-cdn__ill-what {
+			top: 23%;
+			right: 24%;
+
+			&::before {
+				left: -9px;
+				bottom: -24px;
+				transform: translate(-100%, -100%) rotate(157deg);
+			}
+
+			@media (max-width: $tablet) {
+				top: 26%;
+				right: 18%;
+			}
+		}
+	}
+}
+
+.solut-cdn__ill-header {
+	border-bottom: 2px solid $light;
+	padding: 28px 24px;
+
+	@media (max-width: 600px) {
+		border: none;
+		padding: 0;
+	}
+}
+
+.solut-cdn__ill-title {
+	width: 100%;
+	display: inline-block;
+	font-size: 20px;
+	font-weight: 500;
+	letter-spacing: .11em;
+	text-align: center;
+
+	& span {
+		font-weight: 700;
+		color: $accent-second;
+	}
+
+	@media (max-width: 600px) {
+		font-size: 23px;
+	}
+}
+
+.solut-cdn__ill-body {
+	position: relative;
+}
+
+.solut-cdn__ill-content {
+
+}
+
+.solut-cdn__ill-text-block {
+	--size-circle: 10px;
+
+	width: fit-content;
+	display: flex;
+	margin: 40px auto 0 auto;
+
+	&.has-circle::after {
+		top: 12%;
+		right: 4%;
+	}
+}
+
+.solut-cdn__ill-text {
+	font-size: 20px;
+	padding: 20px 22px;
+
+	@include resVal(font-size, 16, 20, 600, 1400);
+
+	@media (max-width: $mobile-l) {
+		padding: 14px 20px;
+	}
+}
+
+.solut-cdn__ill-contour {
+	--icon-before: url('data:image/svg+xml,%3Csvg width=\"17\" height=\"60\" viewBox=\"0 0 17 60\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cline x1=\"1.5\" y1=\"45\" x2=\"1.5\" y2=\"59\" stroke=\"%23F2F4F6\" stroke-width=\"2\" stroke-linecap=\"round\"/%3E%3Cpath d=\"M1.5 58.8125H15.5\" stroke=\"%23F2F4F6\" stroke-width=\"2\" stroke-linecap=\"round\"/%3E%3Cline x1=\"1.5\" y1=\"1.81201\" x2=\"1.5\" y2=\"15.812\" stroke=\"%23F2F4F6\" stroke-width=\"2\" stroke-linecap=\"round\"/%3E%3Cline x1=\"1.5\" y1=\"1.25684\" x2=\"15.5\" y2=\"1.25684\" stroke=\"%23F2F4F6\" stroke-width=\"2\" stroke-linecap=\"round\"/%3E%3C/svg%3E');
+	--icon-after: url('data:image/svg+xml,%3Csvg width=\"18\" height=\"60\" viewBox=\"0 0 18 60\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cline x1=\"16.0361\" y1=\"45\" x2=\"16.0361\" y2=\"59\" stroke=\"%23F2F4F6\" stroke-width=\"2\" stroke-linecap=\"round\"/%3E%3Cline x1=\"1.65625\" y1=\"58.8125\" x2=\"15.6562\" y2=\"58.8125\" stroke=\"%23F2F4F6\" stroke-width=\"2\" stroke-linecap=\"round\"/%3E%3Cline x1=\"16.0361\" y1=\"1.81201\" x2=\"16.0361\" y2=\"15.812\" stroke=\"%23F2F4F6\" stroke-width=\"2\" stroke-linecap=\"round\"/%3E%3Cline x1=\"1.65625\" y1=\"1.25684\" x2=\"15.6562\" y2=\"1.25684\" stroke=\"%23F2F4F6\" stroke-width=\"2\" stroke-linecap=\"round\"/%3E%3C/svg%3E');
+
+}
+
+.solut-cdn__ill-what {
+	position: absolute;
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 1;
+	text-align: center;
+
+	@include resVal(font-size, 14, 20, 600, 1400);
+	@include resVal(font-size, 14, 20, 320, 600);
+
+	&::before {
+		content: '';
+		position: absolute;
+		right: -9px;
+		bottom: 14px;
+		transform: translate(100%, -100%);
+		width: 50px;
+		aspect-ratio: 3;
+		background: center/contain no-repeat url('data:image/svg+xml,%3Csvg width=\"51\" height=\"16\" viewBox=\"0 0 51 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cpath d=\"M1.99512 6.80493C1.44283 6.80493 0.995117 7.25265 0.995117 7.80493C0.995117 8.35722 1.44283 8.80493 1.99512 8.80493V6.80493ZM49.7129 8.51204C50.1034 8.12151 50.1034 7.48835 49.7129 7.09782L43.3489 0.733864C42.9584 0.34334 42.3252 0.34334 41.9347 0.733864C41.5442 1.12439 41.5442 1.75755 41.9347 2.14808L47.5915 7.80493L41.9347 13.4618C41.5442 13.8523 41.5442 14.4855 41.9347 14.876C42.3252 15.2665 42.9584 15.2665 43.3489 14.876L49.7129 8.51204ZM1.99512 8.80493L49.0058 8.80493V6.80493L1.99512 6.80493V8.80493Z\" fill=\"%23F2F4F6\"/%3E%3C/svg%3E');
+
+		@include resVal(width, 30, 50, 600, 1400);
+		@include resVal(width, 30, 50, 320, 600);
+
+		@media (max-width: $mobile-s) {
+			width: 30px;
+		}
+	}
+
+	@media (max-width: $mobile-s) {
+		font-size: 14px;
+	}
+}
+
+.solut-cdn__ill-img {
+	max-width: 324px;
+	padding: 22px 32px 32px;
+	margin: 0 auto;
+}

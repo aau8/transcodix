@@ -1,0 +1,146 @@
+
+.solut-pp {
+	width: 100%;
+	background: center/cover no-repeat url('@img/bgs/get-personal-plan.jpg');
+	padding: 88px 0;
+	// margin-bottom: 87px;
+
+	@media (max-width: $tablet) {
+		padding: 50px 0;
+	}
+}
+
+.solut-pp__container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 32px;
+
+	@media (max-width: $tablet) {
+		grid-template-columns: 1fr;
+	}
+}
+
+.solut-pp__content {
+	display: flex;
+}
+
+.solut-pp__title {
+	position: relative;
+	font-size: 60px;
+	font-weight: 500;
+	margin: auto 0;
+
+	&::after {
+		content: '';
+		width: 100%;
+		height: 22px;
+		display: block;
+		background: left/contain no-repeat url('data:image/svg+xml,%3Csvg width=\"369\" height=\"24\" viewBox=\"0 0 369 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cpath d=\"M2 10.5C1.17157 10.5 0.5 11.1716 0.5 12C0.5 12.8284 1.17157 13.5 2 13.5L2 10.5ZM368.061 13.0607C368.646 12.4749 368.646 11.5252 368.061 10.9394L358.515 1.39343C357.929 0.807643 356.979 0.807643 356.393 1.39343C355.808 1.97922 355.808 2.92896 356.393 3.51475L364.879 12L356.393 20.4853C355.808 21.0711 355.808 22.0208 356.393 22.6066C356.979 23.1924 357.929 23.1924 358.515 22.6066L368.061 13.0607ZM2 13.5L367 13.5L367 10.5L2 10.5L2 13.5Z\" fill=\"%23F2F4F6\"/%3E%3C/svg%3E');
+		margin-top: 25px;
+	}
+
+	@media (max-width: 900px) {
+		font-size: 50px;
+	}
+
+	@media (max-width: $tablet) {
+		width: 100%;
+		font-size: 40px;
+		text-align: center;
+
+		&::after {
+			display: none;
+		}
+	}
+
+	@media (max-width: $mobile-l) {
+		font-size: 30px;
+	}
+
+	@media (max-width: $mobile-m) {
+		font-size: 26px;
+	}
+}
+
+.solut-pp__form {
+	position: relative;
+}
+
+.solut-pp__form-wrap {
+
+	& > * {
+
+		&:not(:last-child) {
+			margin-bottom: 20px;
+
+			@media (max-width: $mobile-l) {
+				margin-bottom: 15px;
+			}
+		}
+	}
+}
+
+.solut-pp__tf {
+
+	& .tf__field {
+		height: 62px;
+
+		@media (max-width: $tablet) {
+			height: 54px;
+		}
+
+		@media (max-width: $mobile-l) {
+			height: 49px;
+		}
+	}
+}
+
+.solut-pp__tf-phone {
+	--icon: url("data:image/svg+xml,%3Csvg width=\"38\" height=\"38\" viewBox=\"0 0 38 38\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg opacity=\"0.7\"%3E%3Cpath d=\"M19.0003 1.979C16.0437 1.98218 13.1387 2.75477 10.5711 4.22082C8.00349 5.68687 5.86162 7.7959 4.35608 10.3406C2.85053 12.8852 2.03315 15.7779 1.98429 18.7341C1.93543 21.6904 2.65678 24.6085 4.07741 27.2015L1.97949 36.0207L10.7987 33.9228C13.0733 35.1706 15.6031 35.8819 18.1948 36.0023C20.7864 36.1228 23.3713 35.6492 25.7519 34.6177C28.1324 33.5862 30.2457 32.0242 31.9302 30.051C33.6147 28.0778 34.8258 25.7456 35.471 23.2327C36.1162 20.7198 36.1784 18.0926 35.6529 15.552C35.1274 13.0113 34.028 10.6244 32.4387 8.57371C30.8495 6.52298 28.8125 4.8627 26.4834 3.71973C24.1543 2.57676 21.5948 1.98135 19.0003 1.979V1.979ZM10.4899 9.71359H15.1291C15.339 9.71359 15.5404 9.797 15.6889 9.94546C15.8373 10.0939 15.9207 10.2953 15.9207 10.5053C15.8948 11.561 16.0722 12.6119 16.4432 13.6007C16.603 13.9317 16.6382 14.3092 16.5422 14.6639C16.4462 15.0187 16.2256 15.327 15.9207 15.5323L14.2978 17.1157C15.0174 18.5209 15.9583 19.8013 17.0845 20.9078C18.182 22.0523 19.4572 23.012 20.8607 23.7498L22.4441 22.1269C23.2357 21.3353 23.5999 21.3353 24.3757 21.6044C25.3645 21.9755 26.4154 22.1529 27.4712 22.1269C27.678 22.1366 27.8738 22.2231 28.0203 22.3695C28.1667 22.5159 28.2532 22.7117 28.2628 22.9186V27.5578C28.2532 27.7646 28.1667 27.9604 28.0203 28.1069C27.8738 28.2533 27.678 28.3398 27.4712 28.3494C22.8143 28.1465 18.4 26.216 15.0895 22.9344C11.8028 19.6274 9.87133 15.2111 9.67449 10.5528C9.67638 10.3348 9.76217 10.126 9.91403 9.96976C10.0659 9.81348 10.2721 9.72173 10.4899 9.71359V9.71359Z\" stroke=\"%23343434\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/%3E%3C/g%3E%3C/svg%3E");
+	--icon-size: 38px;
+
+	@media (max-width: $tablet) {
+		--icon-size: 32px;
+	}
+
+	@media (max-width: $mobile-l) {
+		--icon-size: 26px;
+	}
+}
+
+.solut-pp__form-submit {
+	width: 100%;
+	height: 78px;
+
+	@media (max-width: $tablet) {
+		height: 70px;
+	}
+
+	@media (max-width: $mobile-l) {
+		height: 56px;
+	}
+}
+
+.solut-pp__form-correction {
+	position: absolute;
+	bottom: -13px;
+	left: 0;
+	transform: translateY(100%);
+	width: 100%;
+	font-size: 21px;
+
+	& a {
+		box-shadow: inset 0 -1px var(--color, #{$light});
+	}
+
+	@media (max-width: $tablet) {
+		position: initial;
+		transform: none;
+		font-size: 18px;
+		margin-top: 13px;
+	}
+
+	@media (max-width: $mobile-l) {
+		font-size: 14px;
+	}
+}

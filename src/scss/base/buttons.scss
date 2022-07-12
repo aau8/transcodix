@@ -44,16 +44,44 @@
 	&.is-accent {
 		color: $light;
 		background-color: $accent;
+		border: 2px solid transparent;
 
 		&.is-border {
 			color: $accent;
 			background-color: transparent;
 			border-color: $accent;
 		}
+
+		&:active {
+				color: $accent;
+				background-color: transparent;
+				border-color: $accent;
+		}
+
+		@media (any-hover: hover) {
+
+			&:hover {
+				color: $accent;
+				background-color: transparent;
+				border-color: $accent;
+			}
+		}
 	}
 
 	&.is-underline {
-		border-bottom: 1px solid $light;
+		border: 2px solid transparent;
+		border-bottom-color: $light;
+
+		&:active {
+			border-color: $light
+		}
+
+		@media (any-hover: hover) {
+
+			&:hover {
+				border-color: $light
+			}
+		}
 	}
 
 	@media (max-width: $laptop) {
@@ -81,12 +109,14 @@
 
     @media (any-hover: hover) {
 
-        &:hover {
-            color: $accent;
+		&:hover {
+			--color: #{$accent};
+            color: var(--color);
         }
     }
 
     &:active {
-        color: brig-color($accent, active);
+		--color: #{brig-color($accent, active)};
+		color: var(--color);
     }
 }

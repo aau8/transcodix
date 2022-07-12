@@ -1,0 +1,171 @@
+.solut {
+	counter-reset: solutStep;
+	border-radius: $radius-m;
+	padding: 80px 0;
+}
+
+.solut__body {
+
+	& > * {
+
+		&:not(:last-child) {
+			margin-bottom: 90px;
+
+			@media (max-width: $tablet) {
+				margin-bottom: 70px;
+			}
+
+			@media (max-width: $mobile-l) {
+				margin-bottom: 46px;
+			}
+		}
+	}
+}
+
+.solut-step {
+}
+
+.solut__subheader {
+	margin-bottom: 60px;
+
+	@media (max-width: $mobile-l) {
+		margin-bottom: 40px;
+	}
+}
+
+.solut__subtitle {
+	position: relative;
+	font-size: 35px;
+	padding-left: 55px;
+
+	& span {
+		display: inline-block;
+		font-size: 24px;
+		margin-left: 14px;
+
+		@media (max-width: $tablet) {
+			font-size: 22px;
+			margin-left: 10px;
+		}
+
+		@media (max-width: $mobile-l) {
+			display: block;
+			font-size: 19px;
+			margin: 2px 0 0 0;
+		}
+	}
+
+	&::before {
+		content: '('counter(solutStep)')';
+		counter-increment: solutStep;
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: inline-block;
+		font-size: inherit;
+		color: $accent-second;
+		vertical-align: middle;
+		margin-right: 8px;
+	}
+
+	@media (max-width: $tablet) {
+		font-size: 30px;
+		padding-left: 50px;
+	}
+
+	@media (max-width: $mobile-l) {
+		font-size: 25px;
+		padding-left: 40px;
+	}
+
+	@media (max-width: $mobile-m) {
+		font-size: 20px;
+	}
+}
+
+// Контент
+.solut__content {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 18px 100px;
+	margin-top: 70px;
+
+	@media (max-width: $tablet) {
+		gap: 18px 50px;
+	}
+
+	@media (max-width: 600px) {
+		grid-template-columns: 1fr;
+		margin-top: 20px;
+	}
+}
+
+.solut__buttons {
+	display: flex;
+	align-items: center;
+	margin-top: 50px;
+
+	& > * {
+
+		&:not(:last-child) {
+			margin-right: 70px;
+
+			@media (max-width: $tablet) {
+				margin-right: 30px;
+			}
+
+			@media (max-width: 600px) {
+				margin: 0;
+			}
+		}
+	}
+
+	@media (max-width: 600px) {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 55px;
+	}
+
+	@media (max-width: 400px) {
+		gap: 24px;
+	}
+
+	@media (max-width: $mobile-m) {
+		grid-template-columns: 1fr;
+		gap: 12px;
+	}
+}
+
+.solut__btn {
+
+	@media (max-width: 600px) {
+		font-size: 19px;
+		padding: 0 16px;
+	}
+
+	@media (max-width: $mobile-l) {
+		height: 56px;
+	}
+}
+
+.solut__btn-accent {
+
+}
+
+.solut__btn-underline {
+	padding: 0 30px;
+
+	@media (max-width: 600px) {
+		padding: 0 16px;
+	}
+
+	@media (max-width: $mobile-l) {
+		padding: 0;
+	}
+}
+
+
+@import './solut-stream';
+@import './solut-cdn';
+@import './solut-pp';
+@import './solut-media';
