@@ -65,6 +65,7 @@ $tr: .3s;
 @import "./reset";
 
 body {
+	background: $light;
 
     ._lock & {
         overflow: hidden;

@@ -1,6 +1,15 @@
 import { removeAllClasses, bodyLock, bodyUnlock } from "./utils/functions.js"
 import DismalModules, { acc } from "./utils/modules.js"
 
+// Задаем главному экрану главной страницы минимальную высоту
+window.addEventListener('load', e => {
+	const firstScreen = document.querySelector('.main-first-screen')
+	const main = firstScreen.querySelector('.main')
+	const whyUs = firstScreen.querySelector('.why-us')
+
+	firstScreen.style.minHeight = main.clientHeight + whyUs.clientHeight + 'px'
+})
+
 // Аккордеон
 // const accordions = new DismalModules.Accordions()
 
