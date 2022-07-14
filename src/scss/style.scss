@@ -108,6 +108,8 @@ body {
     }
 }
 
+@import './libs/swiper';
+
 // Общие стили проекта
 @import "./common";
 
@@ -128,7 +130,13 @@ body {
 @import "./sections/how";
 @import "./sections/s-solutions";
 @import "./sections/s-table";
+@import "./sections/trans-why";
+@import "./sections/trans-how";
 @import "./sections/footer";
+
+@import "./pages/about";
+@import "./pages/transcoding";
+
 
 
 // Стили для отдельных страниц
