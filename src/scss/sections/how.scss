@@ -1,0 +1,270 @@
+.how__wrap {
+	color: $light;
+	background: $text-primary;
+	border-radius: $radius-m;
+	padding: 50px 0 70px;
+}
+
+.how__body {
+
+}
+
+.how__content {
+
+}
+
+.how__content-title {
+	font-size: 35px;
+}
+
+.how__ill {
+	position: relative;
+	padding: 140px 0 110px;
+	margin-top: 50px;
+
+	@include resVal(padding-top, 100, 140, 600, $container-width);
+	@include resVal(padding-bottom, 80, 140, 600, $container-width);
+
+	@media (max-width: 600px) {
+		display: flex;
+		padding: 0;
+	}
+}
+
+.how__ill-img {
+
+	@media (max-width: 600px) {
+		width: 50%;
+	}
+}
+
+.how__ill-list {
+	counter-reset: howList;
+
+	& li {
+		display: flex;
+		align-items: flex-end;
+
+		&::before {
+			content: counter(howList);
+			counter-increment: howList;
+			font-size: 76px;
+			font-weight: 800;
+			line-height: 1;
+			margin-right: 15px;
+
+			@include resVal(font-size, 40, 76, 600, $container-width);
+
+			@media (max-width: 600px) {
+				content: counter(howList)'.';
+				display: block;
+				font-size: 31px;
+				margin-bottom: 4px;
+			}
+
+			@media (max-width: $mobile-m) {
+				font-size: 26px;
+			}
+		}
+
+		@media (max-width: 600px) {
+			display: block;
+		}
+
+		@media (max-width: $mobile-m) {
+			font-size: 16px;
+		}
+	}
+
+	@media (max-width: 600px) {
+		width: 50%;
+	}
+}
+
+.how__ill-item {
+	position: absolute;
+
+	@include resVal(font-size, 14, 24, 600, $container-width);
+
+	&:nth-child(1) {
+		top: 0;
+		left: 0%;
+		max-width: 304px;
+
+		@include resVal(max-width, 200, 304, 600, $container-width);
+
+		@media (max-width: 600px) {
+			left: 50%;
+			top: 0;
+		}
+	}
+
+	&:nth-child(2) {
+		top: 0;
+		left: 42%;
+		max-width: 282px;
+
+		@include resVal(max-width, 200, 282, 600, $container-width);
+
+		@media (max-width: 850px) {
+			left: 38%;
+		}
+
+		@media (max-width: 600px) {
+			top: 21%;
+			left: 50%;
+			// opacity: 0;
+		}
+	}
+
+	&:nth-child(3) {
+		top: 0;
+		left: 75%;
+		max-width: 290px;
+
+
+		@media (max-width: 850px) {
+			left: 70%;
+		}
+
+		@media (max-width: 600px) {
+			top: 45%;
+			left: 50%;
+			// bottom: 0;
+		}
+	}
+
+	&:nth-child(4) {
+		bottom: 0;
+		left: 55%;
+		max-width: 482px;
+
+		@include resVal(max-width, 300, 482, 600, $container-width);
+
+		@media (max-width: 600px) {
+			top: 66%;
+			left: 50%;
+		}
+	}
+
+	&:nth-child(5) {
+		bottom: 0;
+		left: 16%;
+		max-width: 330px;
+
+		@include resVal(max-width, 220, 330, 600, $container-width);
+
+		@media (max-width: 600px) {
+			top: 87%;
+			left: 50%;
+		}
+	}
+
+	@media (max-width: 600px) {
+		// position: initial;
+	}
+}
+
+.how__footer {
+	margin-top: 80px;
+}
+
+.how__footer-content {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 50px 100px;
+
+	@media (max-width: 900px) {
+		gap: 50px 70px;
+	}
+
+	@media (max-width: $tablet) {
+		grid-template-columns: 1fr;
+	}
+}
+
+.how__footer-text {
+
+	& p {
+		margin: 24px 0;
+
+		@media (max-width: $mobile-l) {
+			margin: 16px 0;
+		}
+	}
+
+	& ul {
+		margin: 36px 0;
+
+		@media (max-width: $mobile-l) {
+			margin: 24px 0;
+		}
+
+		& li {
+			display: flex;
+			margin-left: 20px;
+
+			&:not(:last-child) {
+				margin-bottom: 30px;
+
+				@media (max-width: $tablet) {
+					margin-bottom: 20px;
+				}
+
+				@media (max-width: $mobile-l) {
+					margin-bottom: 10px;
+				}
+			}
+
+			&::before {
+				content: '';
+				min-width: 6px;
+				width: 6px;
+				height: 6px;
+				border-radius: 50%;
+				background: $light;
+				margin: 16px 14px 0 0;
+
+				@media (max-width: $tablet) {
+					margin-top: 12px;
+				}
+			}
+
+			@media (max-width: $mobile-l) {
+				margin-left: 10px;
+			}
+		}
+	}
+
+	& b,
+	& strong {
+		font-weight: inherit;
+		color: $accent-second;
+	}
+
+	& > * {
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.how__footer-text-btn {
+	margin-top: 50px;
+
+	@media (max-width: $tablet) {
+		max-width: 280px;
+		// margin: 0 auto;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	@media (max-width: $mobile-l) {
+
+	}
+}

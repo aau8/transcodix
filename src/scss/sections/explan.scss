@@ -1,0 +1,68 @@
+.explan__header {
+
+}
+
+.explan__title {
+	max-width: 1130px;
+	font-size: 35px;
+	font-weight: 400;
+	padding: 20px 60px;
+
+	& span {
+		color: $accent;
+	}
+
+	@media (max-width: $tablet) {
+		font-size: 30px;
+		padding: 16px 30px;
+	}
+
+	@media (max-width: $mobile-l) {
+		padding: 16px 22px;
+		font-weight: 500;
+	}
+
+	@media (max-width: $mobile-m) {
+		font-size: 24px;
+		// padding: ;
+	}
+}
+
+.explan__body {
+
+}
+
+.explan__content {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 70px 90px;
+	margin-top: 30px;
+
+	@media (max-width: $tablet) {
+		grid-template-columns: 1fr;
+		gap: 50px;
+	}
+
+	@media (max-width: $mobile-l) {
+		gap: 22px;
+	}
+
+	& b,
+	& strong {
+		color: $accent;
+		font-weight: inherit;
+	}
+}
+
+.explan__btn {
+	max-width: 350px;
+	margin-top: 40px;
+
+	@media (max-width: $mobile-l) {
+		max-width: 240px;
+	}
+
+	@media (max-width: $mobile-m) {
+		max-width: 220px;
+	}
+}

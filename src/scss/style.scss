@@ -21,7 +21,7 @@ $light: #F2F4F6;
 // $frame-light: #F2F4F6;
 
 // Обводка
-// $border-line: #cecece;
+$border-line: #AEAEAE;
 // $input-placeholder: brig-color(#000, .3);
 $radius-s: 4px;
 $radius-m: 20px;
@@ -92,7 +92,8 @@ body {
 всем классам содержащим *__container
 Например header__container, main__container и т.д.
 */
-[class*="__container"] {
+[class*="__container"],
+.container {
     @if ($max-width-container>0) {
         max-width: $max-width-container + px;
         box-sizing: content-box;
@@ -113,6 +114,9 @@ body {
 // Базовые стили, шаблоны, заготовки
 @import "./base";
 
+@import "./components/cards/c-solutions";
+
+
 // Стили частоиспользуемых секций
 @import "./sections/header";
 @import "./sections/main";
@@ -120,6 +124,10 @@ body {
 @import "./sections/stream";
 @import "./sections/solut/solut";
 @import "./sections/reviews";
+@import "./sections/explan";
+@import "./sections/how";
+@import "./sections/s-solutions";
+@import "./sections/s-table";
 @import "./sections/footer";
 
 

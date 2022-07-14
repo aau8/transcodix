@@ -1,9 +1,13 @@
 // Бургер
 .burger {
+	--size: 56px;
+
 	display: none;
     position: relative;
-    width: 56px;
-	aspect-ratio: 1;
+    min-width: var(--size);
+    width: var(--size);
+    min-height: var(--size);
+	height: var(--size);
 	background: $text-primary;
 	border-radius: 50%;
     transition: $tr;
@@ -51,11 +55,29 @@
 }
 //========================================================================================================================================================
 
+// Логотип
+.logo {
+
+}
+
+.logo__path-main {
+
+	& path {
+		fill: #F2F4F6;
+	}
+}
+
+.logo__path-accent {
+
+	& path {
+		fill: $accent-second;
+	}
+}
 
 // Белый контур с красной точкой
 // Класс элемента, у которого есть контур
 .has-contour {
-	--size-circle: 22px;
+	--size-circle: 20px;
 
 	position: relative;
 
@@ -64,14 +86,20 @@
 		&::after {
 			content: '';
 			position: absolute;
-			top: 11%;
-			right: 2%;
+			// top: 11%;
+			// right: 2%;
+			top: 12px;
+			right: 12px;
 			display: block;
 			width: var(--size-circle);
 			aspect-ratio: 1;
 			background: $accent;
 			border-radius: 50%;
 		}
+	}
+
+	@media (max-width: $mobile-l) {
+		--size-circle: 16px;
 	}
 }
 
@@ -115,6 +143,14 @@
 		}
 	}
 
+	&.is-dark {
+
+		&::after,
+		&::before {
+			background-color: $text-primary;
+		}
+	}
+
 	&.is-accent {
 
 		&::after,
@@ -152,6 +188,10 @@
 }
 //========================================================================================================================================================
 
+// страница о нас
+.content.page-about {
+	background: $light;
+}
 
 // Шапка раздела
 .s-header {
@@ -169,6 +209,10 @@
 .s-header__title {
 	font-size: 60px;
 	font-weight: 500;
+
+	& span {
+		color: $accent;
+	}
 
 	@media (max-width: $tablet) {
 		font-size: 45px;
@@ -188,6 +232,17 @@
 }
 
 .s-header__text {
+	font-size: 35px;
+	font-weight: 400;
+	margin-top: 20px;
 
+	@media (max-width: $tablet) {
+		font-size: 26px;
+	}
+
+	@media (max-width: $mobile-l) {
+		font-size: 19px;
+		margin-top: 14px;
+	}
 }
 //========================================================================================================================================================

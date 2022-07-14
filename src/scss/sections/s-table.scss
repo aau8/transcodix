@@ -1,0 +1,204 @@
+.s-table__header {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.s-table__body {
+	margin-top: 86px;
+
+	@media (max-width: $mobile-l) {
+		margin-top: 70px;
+	}
+}
+
+.s-table__body-titles {
+
+	// & .s-table__block-row {
+	// 	padding: 0;
+	// }
+
+	// & .s-table__block-ceil-title {
+	// 	font-size: 24px;
+	// 	font-weight: 800;
+	// }
+}
+
+.s-table__block {
+	margin-bottom: 25px;
+}
+
+.s-table__block-header {
+
+	&.is-main {
+
+		& .s-table__block-ceil {
+			transform: translateY(-30px);
+
+			@media (max-width: $tablet) {
+				transform: none;
+			}
+		}
+	}
+
+	& .s-table__block-row {
+		padding: 0;
+	}
+
+	& .s-table__block-ceil-title {
+		font-size: 24px;
+		font-weight: 800;
+
+		@media (max-width: $tablet) {
+			font-size: 20px;
+		}
+
+		@media (max-width: 600px) {
+			font-size: 16px;
+			font-weight: 600;
+		}
+	}
+}
+
+.s-table__block-row {
+	display: flex;
+	align-items: center;
+	padding: 12px 0;
+}
+
+.s-table__block-ceil-title {
+	width: 40%;
+	height: 100%;
+	display: block;
+	// padding-left: 58px;
+	padding: 0 16px 0 58px;
+
+	@media (max-width: $tablet) {
+		// padding-left: 16px;
+		padding: 0 12px 0 16px;
+	}
+
+	@media (max-width: 600px) {
+		font-size: 16px;
+	}
+}
+
+.s-table__block-ceil {
+	position: relative;
+	// display: block;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 30%;
+	height: 100%;
+	text-align: center;
+	font-size: 35px;
+
+	@include resVal(font-size, 20, 35, 600, $container-width);
+
+	@media (max-width: 600px) {
+		font-size: 16px;
+		line-height: 1.1;
+	}
+
+	&::before {
+		display: none;
+		content: '';
+		width: 54px;
+		height: 54px;
+
+		@media (max-width: $tablet) {
+			width: 32px;
+			height: 32px;
+		}
+	}
+
+	&.is-check {
+
+		&::before {
+			display: block;
+			background: center/contain no-repeat url('data:image/svg+xml,%3Csvg width=\"54\" height=\"54\" viewBox=\"0 0 54 54\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cpath d=\"M47 13L22.8957 41L8 26.9199\" stroke=\"%2300CF91\" stroke-width=\"2\" stroke-linecap=\"round\"/%3E%3C/svg%3E');
+		}
+	}
+
+	&.is-not-check {
+
+		&::before {
+			display: block;
+			background: center/contain no-repeat url('data:image/svg+xml,%3Csvg width=\"54\" height=\"54\" viewBox=\"0 0 54 54\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cpath d=\"M47 27H7\" stroke=\"%23FF3F3F\" stroke-width=\"2\" stroke-linecap=\"round\"/%3E%3C/svg%3E');
+		}
+	}
+
+	&.is-logo {
+		// width: 70%;
+
+		& svg {
+			max-width: 233px;
+
+			@include resVal(max-width, 150, 233, 600, $container-width);
+
+			@media (max-width: 600px) {
+				max-width: 58px;
+			}
+		}
+
+		& .logo__path-main {
+
+			& path {
+				fill: $text-primary;
+			}
+		}
+
+		& .logo__path-accent {
+
+			& path {
+				fill: $accent;
+			}
+		}
+	}
+}
+
+.s-table__block__logo {
+
+	&.is-pc {
+
+		@media (max-width: 600px) {
+			display: none;
+		}
+	}
+
+	&.is-mob {
+		display: none;
+
+		@media (max-width: 600px) {
+			display: block;
+		}
+	}
+}
+
+.s-table__block-title {
+	font-size: 24px;
+	font-weight: 800;
+
+	@media (max-width: $tablet) {
+		font-size: 18px;
+	}
+}
+
+.s-table__block-body {
+	background: #fff;
+	border-radius: 4px;
+	margin-top: 5px;
+	overflow: hidden;
+
+	& > .s-table__block-row {
+
+		&:not(:last-child) {
+			border-bottom: 1px solid $border-line;
+		}
+	}
+}
+
+.s-table__btn {
+	width: fit-content;
+	margin: 50px auto 0;
+}
