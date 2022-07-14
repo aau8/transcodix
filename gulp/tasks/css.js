@@ -29,12 +29,12 @@ export default function cssBuild() {
                 overrideBrowserslist: ["last 3 versions"],
             })
         ))
-        .pipe(app.plugins.if(
-            app.isProd,
-            webpcss({
-                webpClass: '.webp',
-                noWebpClass: '.no-webp'
-        })))
+        // .pipe(app.plugins.if(
+        //     app.isProd,
+        //     webpcss({
+        //         webpClass: '.webp',
+        //         noWebpClass: '.no-webp'
+        // })))
         .pipe(gulp.dest(app.path.build.css))
 
         .pipe(app.plugins.if(

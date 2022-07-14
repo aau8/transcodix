@@ -12,10 +12,10 @@ export default function htmlBuild () {
     return gulp.src(app.path.src.html)
         .pipe(fileinclude())
         .pipe(replace(/@img\//g, './img/'))
-        .pipe(app.plugins.if(
-            app.isProd,
-            webpHtmlNosvg()
-        ))
+        // .pipe(app.plugins.if(
+        //     app.isProd,
+        //     webpHtmlNosvg()
+        // ))
         .pipe(app.plugins.if(
             app.isProd,
             replace('style.css', 'style.min.css')

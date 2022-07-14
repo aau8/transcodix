@@ -1363,9 +1363,6 @@ h6 {
   background: #FF3F3F;
 }
 
-.no-webp .main{
-  background: center/cover no-repeat #343434 url("../img/bgs/main.jpg"); }
-
 .main {
   position: relative;
   width: 100%;
@@ -1377,6 +1374,7 @@ h6 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background: center/cover no-repeat #343434 url("../img/bgs/main.jpg");
 }
 
 .main__container {
@@ -1756,11 +1754,9 @@ h6 {
   margin: 0 auto;
 }
 
-.no-webp .solut-pp{
-  background: center/cover no-repeat url("../img/bgs/get-personal-plan.jpg"); }
-
 .solut-pp {
   width: 100%;
+  background: center/cover no-repeat url("../img/bgs/get-personal-plan.jpg");
   padding: 88px 0;
 }
 
@@ -2509,8 +2505,9 @@ h6 {
     font-size: 18px;
   }
 
-  .no-webp .main{
-    background: -2px center/cover no-repeat #343434 url("../img/bgs/main-mob.jpg"); }
+  .main {
+    background: -2px center/cover no-repeat #343434 url("../img/bgs/main-mob.jpg");
+  }
 
   .main__container {
     padding-top: 70px;
@@ -3572,13 +3569,4 @@ h6 {
   .header__tools-item_free:active {
     background: #ff2020;
   }
-}
-
-.webp .main{ background: center/cover no-repeat #343434 url(../img/bgs/main.webp); }
-
-.webp .solut-pp{ background: center/cover no-repeat url(../img/bgs/get-personal-plan.webp); }
-
-@media (max-width: 900px){
-
-  .webp .main{ background: -2px center/cover no-repeat #343434 url(../img/bgs/main-mob.webp); }
 }

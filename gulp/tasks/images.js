@@ -18,12 +18,12 @@ export function imagesBuild () {
                 optimizationLevel: 3
             })
         ))
-        .pipe(gulp.dest(app.path.build.images))
-        .pipe(app.plugins.if(
-            app.isProd,
-            webp()
-        ))
-        .pipe(gulp.dest(app.path.build.images))
+        // .pipe(gulp.dest(app.path.build.images))
+        // .pipe(app.plugins.if(
+        //     app.isProd,
+        //     webp()
+        // ))
+        // .pipe(gulp.dest(app.path.build.images))
 
         .pipe(gulp.src(app.path.src.svg))
         .pipe(gulp.dest(app.path.build.images))
@@ -47,9 +47,9 @@ export function convertImages() {
                 optimizationLevel: 3
             })
         )
-        .pipe(gulp.dest(app.path.build.convertImages))
-        .pipe(webp())
-        .pipe(gulp.dest(app.path.build.convertImages))
+        // .pipe(gulp.dest(app.path.build.convertImages))
+        // .pipe(webp())
+        // .pipe(gulp.dest(app.path.build.convertImages))
 
         .pipe(gulp.src(app.path.src.svg))
         .pipe(gulp.dest(app.path.build.convertImages))
