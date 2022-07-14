@@ -1,0 +1,80 @@
+.calc__body {
+
+}
+
+.calc__section {
+
+}
+
+.calc__section-title {
+	font-size: 35px;
+	font-weight: 400;
+	margin-bottom: 50px;
+
+	@media (max-width: $tablet) {
+		margin-bottom: 30px;
+	}
+}
+
+.calc__block {
+	border: 1px solid $text-primary;
+	border-radius: $radius-s;
+
+	&.is-trans {
+
+	}
+
+	&.is-deliv {
+
+	}
+}
+
+
+.calc__tools {
+	width: 64%;
+	border-right: 1px solid $text-primary;
+	padding: 40px 50px;
+}
+
+// Ползунок
+.calc-range__block {
+
+}
+
+.calc-range__header {
+
+}
+
+.calc__title {
+
+}
+
+.calc-range__body {
+
+}
+
+.calc-range {
+
+	& .noUi-target {
+		height: 11px;
+	}
+}
+
+.calc-range__info {
+
+}
+
+.calc-range__value {
+
+	&.is-min {
+
+	}
+
+	&.is-max {
+
+	}
+}
+
+.calc__info {
+	width: 36%;
+}

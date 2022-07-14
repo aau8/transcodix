@@ -43,6 +43,7 @@
     "type": "module",
     "private": true,
     "dependencies": {
+        "nouislider": "^15.6.0",
         "swiper": "^8.3.1"
     }
 }

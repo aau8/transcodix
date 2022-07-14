@@ -84,6 +84,7 @@ body {
         flex: 1 0 auto;
         position: relative;
         z-index: 1;
+		background: $light;
     }
 }
 
@@ -109,6 +110,7 @@ body {
 }
 
 @import './libs/swiper';
+@import './libs/nouislider';
 
 // Общие стили проекта
 @import "./common";
@@ -136,9 +138,9 @@ body {
 @import "./sections/s-table";
 @import "./sections/trans-why";
 @import "./sections/trans-how";
+@import "./sections/calc";
 @import "./sections/footer";
 
-@import "./pages/about";
 @import "./pages/transcoding";
 
 
