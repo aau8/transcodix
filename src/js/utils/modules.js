@@ -238,7 +238,7 @@ export class Modals {
 
 		// Событие закрытия модалки
 		const _eModalOpenClose = new Event('modal-close')
-		_eModalOpenStart.data = { ...this }
+		_eModalOpenClose.data = { ...this }
 
 		modal.dispatchEvent( _eModalOpenClose )
 

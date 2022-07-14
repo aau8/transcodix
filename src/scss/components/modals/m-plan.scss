@@ -1,0 +1,58 @@
+.m-plan {
+
+}
+
+.m-plan__wrap {
+
+	@media (max-width: $tablet) {
+		padding: 0;
+	}
+
+	@media (max-width: $mobile-l) {
+		background: $text-primary;
+		pointer-events: none;
+	}
+}
+
+.m-plan__window {
+	max-width: 1200px;
+	padding: 125px 24px;
+
+	@media (max-width: $mobile-l) {
+		position: initial;
+		padding: 70px 16px;
+		pointer-events: fill;
+	}
+}
+
+.m-plan__content {
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+.m-plan__title {
+	font-size: 60px;
+	font-weight: 500;
+	color: $light;
+	text-align: center;
+
+	@media (max-width: $tablet) {
+		font-size: 50px;
+	}
+
+	@media (max-width: 600px) {
+		font-size: 40px;
+	}
+
+	@media (max-width: $mobile-l) {
+		font-size: 30px;
+	}
+}
+
+.m-plan__form {
+	margin-top: 60px;
+
+	@media (max-width: $mobile-l) {
+		margin-top: 40px;
+	}
+}

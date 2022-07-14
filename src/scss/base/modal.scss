@@ -45,31 +45,22 @@
     position: relative;
     max-width: 615px;
     width: 100%;
-    background: #fff;
+    background: $text-primary;
     padding: 24px;
 }
 
 .modal-close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 36px;
-    height: 36px;
+	--size: 24px;
+	position: absolute;
+    top: 30px;
+    right: 30px;
+    // width: 36px;
+    // height: 36px;
+	display: block;
+	background: none;
     transition: $tr;
 
-    @media (any-hover: hover) {
-        
-        &:hover {
-            transform: scale(1.1);
-        }
-    }
-
-    &:active {
-
-        @media (any-hover: hover) {
-            transform: scale(1);
-        }
-
-        transform: scale(.9);
-    }
+	& span {
+		width: 100%;
+	}
 }

@@ -1,0 +1,68 @@
+.m-loop {
+
+}
+
+.m-loop__wrap {
+
+}
+
+.m-loop__window {
+	position: relative;
+	color: $light;
+	border-radius: $radius-s;
+	padding: 30px 40px;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		border-radius: $radius-s;
+		border: 2px solid transparent;
+		background: linear-gradient(131.83deg, #E129FF -0.01%, #FF0000 20.58%, #31FDF1 44.52%, #0913FF 77.5%, #E129FF 92.13%, #31FDF1 104.06%) border-box;
+		-webkit-mask: linear-gradient(#fff 0 0) padding-box,
+		  linear-gradient(#fff 0 0);
+		-webkit-mask-composite: destination-out;
+		mask-composite: exclude;
+		pointer-events: none;
+	}
+
+	@media (max-width: 410px) {
+		padding-top: 60px;
+	}
+}
+
+.m-loop__content {
+
+	@media (max-width: $mobile-l) {
+		text-align: center;
+	}
+}
+
+.m-loop__title {
+	font-size: 35px;
+
+	@media (max-width: $mobile-l) {
+		font-size: 30px;
+	}
+}
+
+.m-loop__text {
+	margin-top: 18px;
+
+	@media (max-width: $mobile-l) {
+		margin-top: 14px;
+	}
+}
+
+.m-loop__btn {
+	max-width: 300px;
+	margin-top: 19px;
+
+	@media (max-width: $mobile-l) {
+		max-width: none;
+		width: 100%;
+	}
+}

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/style.min.css?_v=20220714143301">
+    <link rel="stylesheet" href="./css/style.min.css?_v=20220714161906">
 </head>
 <body>
 	<div class="wrapper">
@@ -142,7 +142,6 @@
 					</div>
 					<div class="trans-how__body">
 						<div class="trans-how__ill">
-							<!-- <h3 class="trans-how__ill-title">Perfomance</h3> -->
 							<div class="trans-how__ill-img">
 								<picture>
 									<source srcset="./img/ills/transcoding-how-work-mob.png" media="(max-width: 600px)">
@@ -150,10 +149,101 @@
 								</picture>
 							</div>
 						</div>
-						<div class="th-table">
-							<div class="th-table__header">
-								<div class="th-table__ceil">
-									
+						<div class="th-table__list">
+							<div class="th-table is-first">
+								<div class="th-table__header">
+									<div class="th-table__row">
+										<div class="th-table__ceil">
+											<span>Input protocols</span>
+										</div>
+										<div class="th-table__ceil">
+											<span>Codecs</span>
+										</div>
+									</div>
+								</div>
+								<div class="th-table__body">
+									<div class="th-table__row">
+										<div class="th-table__ceil">
+											<span>RTMP</span>
+											<span>RTSP</span>
+											<span>SRT</span>
+											<span>Icecast</span>
+											<span>RIST</span>
+										</div>
+										<div class="th-table__ceil has-table">
+											<div class="th-table">
+												<div class="th-table__body">
+													<div class="th-table__row">
+														<div class="th-table__ceil">
+															<span>VIDEO</span>
+														</div>
+														<div class="th-table__ceil">
+															<span>H264</span>
+															<span>VP9, H265 (coming soon)</span>
+															<span>Any required codec on demand</span>
+														</div>
+													</div>
+													<div class="th-table__row">
+														<div class="th-table__ceil">
+															<span>VIDEO</span>
+														</div>
+														<div class="th-table__ceil">
+															<span>HE-AAC + v1 & v2, MPEG1 Part1/2, Speex, G.711, Opus, Vorbis</span>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- <div class="th-table__ceil-block">
+
+
+											</div> -->
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="th-table is-second">
+								<div class="th-table__header">
+									<div class="th-table__row">
+										<div class="th-table__ceil">
+											<span>Resolution</span>
+										</div>
+										<div class="th-table__ceil">
+											<span>Output protocols</span>
+										</div>
+										<div class="th-table__ceil">
+											<span>Bitrate</span>
+										</div>
+									</div>
+								</div>
+								<div class="th-table__body">
+									<div class="th-table__row">
+										<div class="th-table__ceil has-strokes">
+											<span>240</span>
+											<span>360</span>
+											<span>480</span>
+											<span>720</span>
+											<span>1080</span>
+											<span>4K</span>
+											<span>8K</span>
+										</div>
+										<div class="th-table__ceil has-strokes">
+											<span>HLS</span>
+											<span>MPEG-DASH</span>
+											<span>RTMP</span>
+											<span>RTSP</span>
+											<span>SLDP</span>
+											<span>Icecast</span>
+										</div>
+										<div class="th-table__ceil has-strokes">
+											<span>300 kbps</span>
+											<span>500 kbps</span>
+											<span>1000 kbps</span>
+											<span>1500-2250 kbps</span>
+											<span>3000-4500 kbps</span>
+											<span>13000-20000 kbps</span>
+											<span>25000-100000 kbps</span>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -191,11 +281,37 @@
 </footer>
 	</div>
 
-    <!-- <div class="modal" data-modal-id="modal" data-close-on-bg>
-    <div class="modal__wrap">
-        <div class="modal__window">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum adipisci deserunt atque quis! Iure autem aut impedit velit? Maxime non quo voluptate porro doloribus officia ea accusamus harum ab alias!</p>
-            <button class="burger is-active modal-close" data-modal-close>
+    <div class="modal m-plan" data-modal-id="personal-plan" data-close-on-bg>
+    <div class="modal__wrap m-plan__wrap">
+        <div class="modal__window m-plan__window">
+			<div class="m-plan__content">
+				<h2 class="m-plan__title">Get my personal plan</h2>
+				<form action="#" class="solut-pp__form m-plan__form">
+					<div class="solut-pp__form-wrap">
+						<label class="tf solut-pp__tf">
+							<div class="tf__field">
+								<input type="text" name="user-">
+								<span class="tf__label">Name</span>
+							</div>
+						</label>
+						<label class="tf has-icon solut-pp__tf solut-pp__tf-phone">
+							<div class="tf__field">
+								<input type="text" name="user-">
+								<span class="tf__label">+__ (___) ___ __-__</span>
+							</div>
+						</label>
+						<label class="tf solut-pp__tf">
+							<div class="tf__field">
+								<input type="email" name="user-">
+								<span class="tf__label">E-mail</span>
+							</div>
+						</label>
+						<button class="btn is-border is-light solut-pp__form-submit">Try now</button>
+					</div>
+				</form>
+			</div>
+
+			<button class="burger is-active modal-close" data-modal-close>
                 <span></span>
                 <span></span>
                 <span></span>
@@ -203,7 +319,26 @@
         </div>
         <div class="modal__bg"></div>
     </div>
-</div> -->
-    <script src="./js/bundle.min.js?_v=20220714143301"></script>
+</div>
+
+<div class="modal m-loop" data-modal-id="stay-loop" data-close-on-bg>
+    <div class="modal__wrap m-loop__wrap">
+        <div class="modal__window m-loop__window">
+			<div class="m-loop__content">
+				<h2 class="m-loop__title">Stay in the loop</h2>
+				<p class="m-loop__text">Join 101,315 readers who get 6 new video tips in their inbox every Monday</p>
+				<button class="btn is-border is-light m-loop__btn">Yes, please</button>
+			</div>
+
+			<button class="burger is-active modal-close" data-modal-close>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="modal__bg"></div>
+    </div>
+</div>
+    <script src="./js/bundle.min.js?_v=20220714161906"></script>
 </body>
 </html>

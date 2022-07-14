@@ -5,7 +5,7 @@ import DismalModules, { acc } from "./utils/modules.js"
 // const accordions = new DismalModules.Accordions()
 
 // Модальные окна
-// const modals = new DismalModules.Modals()
+const modals = new DismalModules.Modals()
 
 // Табы
 // DismalModules.tabs()
