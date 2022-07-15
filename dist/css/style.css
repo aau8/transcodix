@@ -1831,7 +1831,8 @@ body {
       -ms-transform: translate(-50%, calc(100% + 70px));
           transform: translate(-50%, calc(100% + 70px));
   background: #343434;
-  padding: 6px 0;
+  border-radius: 8px;
+  padding: 10px 0;
   opacity: 0;
   pointer-events: none;
   -webkit-transition: 0.3s;
@@ -1872,6 +1873,8 @@ body {
 .sub-menu li a {
   display: inline-block;
   width: 100%;
+  font-size: 18px;
+  font-weight: 100;
   text-align: center;
   padding: 2px 6px;
 }
