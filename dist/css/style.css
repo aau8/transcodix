@@ -3627,6 +3627,140 @@ body {
   margin: 0 auto;
 }
 
+.content.page-auth {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: center/cover no-repeat url("../img/auth-bg.jpg");
+}
+
+.auth {
+  height: 100%;
+  width: 100%;
+  padding: 32px 0;
+  margin: auto;
+}
+
+.auth__container {
+  max-width: 940px;
+}
+
+.auth__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 1px solid #AEAEAE;
+  border-radius: 11px;
+  padding: 100px 24px;
+}
+
+.auth-form {
+  max-width: 600px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 auto;
+}
+
+.auth-form__header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.auth__logo {
+  max-width: 387px;
+  width: 100%;
+}
+
+.auth-form__body {
+  margin-top: 60px;
+}
+
+.auth-form__body > *:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+.auth-form__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: -12px -10px;
+}
+
+.auth-form__tf {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 0px;
+          flex: 1 0 0;
+  min-width: 220px;
+  margin: 12px 10px;
+}
+
+.auth-form__tf .tf__field {
+  height: 62px;
+}
+
+.auth-form__submit {
+  height: 62px;
+  width: 100%;
+}
+
+.auth-form__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #F2F4F6;
+  margin-top: 36px;
+}
+
+.auth-form__agree {
+  position: relative;
+}
+
+.auth-form__agree input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.auth-form__agree input:checked + span::after {
+  background-image: url('data:image/svg+xml,%3Csvg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M17.6665 6.3335L9.63174 15.6668L4.6665 10.9735" stroke="%2331FDF1" stroke-width="2" stroke-linecap="round"/%3E%3C/svg%3E');
+}
+
+.auth-form__agree span::after {
+  content: "";
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border: 1px solid #F2F4F6;
+  background: center/contain no-repeat;
+  vertical-align: middle;
+  margin-left: 36px;
+}
+
 @media (min-width: 451px) {
   .content.page-media-storage .trans-why__block-title {
     min-height: 90px;
@@ -4387,6 +4521,10 @@ body {
   .content.page-media-storage .explan__body {
     margin-top: 40px;
   }
+
+  .auth-form__agree span::after {
+    margin-left: 24px;
+  }
 }
 
 @media (max-width: 800px) and (any-hover: hover) {
@@ -4597,6 +4735,36 @@ body {
   .content.page-media-storage .trans-how__body {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
+  }
+
+  .auth-form.is-signup .auth-form__footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .auth-form__footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
+  .auth-form__agree {
+    margin-bottom: 16px;
   }
 }
 
@@ -4954,6 +5122,26 @@ body {
   .content.page-media-storage .trans-why__icon {
     width: 85px;
     height: 85px;
+  }
+
+  .auth__body {
+    padding: 70px 16px 55px;
+  }
+
+  .auth__logo {
+    max-width: 270px;
+  }
+
+  .auth-form__body > *:not(:last-child) {
+    margin-bottom: 8px;
+  }
+
+  .auth-form__body {
+    margin-top: 50px;
+  }
+
+  .auth-form__tf {
+    --font-size: 19px;
   }
 }
 
