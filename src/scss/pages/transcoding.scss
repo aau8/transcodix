@@ -1,0 +1,14 @@
+.content.page-transcoding {
+
+	& .explan__content {
+		grid-template-columns: minmax(min-content, 420px) 1fr;
+
+		@media (max-width: $laptop) {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		@media (max-width: $tablet) {
+			grid-template-columns: 1fr;
+		}
+	}
+}
