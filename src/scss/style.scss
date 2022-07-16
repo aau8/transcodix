@@ -9,27 +9,16 @@
 // Переменные
 // Текст
 $text-primary: #343434;
-// $text-second: brig-color($text-primary, .7);
-// $text-accent: #FFCD6D;
-// $link-active: brig-color(#FFCD6D, active);
 $accent: #FF3F3F;
 $accent-second: #31FDF1;
 $light: #F2F4F6;
 
-// Задний фон разделов
-// $frame-dark: #080A0A;
-// $frame-light: #F2F4F6;
-
 // Обводка
 $border-line: #AEAEAE;
-// $input-placeholder: brig-color(#000, .3);
 $radius-s: 4px;
 $radius-m: 20px;
 
 $error: #EB5757;
-
-// Текстовые поля
-// $tf-label: $text-second;
 
 // ================ Colors End ================
 
@@ -142,12 +131,8 @@ body {
 @import "./sections/calc";
 @import "./sections/footer";
 
-@import "./pages/transcoding";
+
+// Стили для отдельных страниц
 @import "./pages/about";
 @import "./pages/media-storage";
 @import "./pages/auth";
-
-
-
-// Стили для отдельных страниц
-// @import "./pages/";

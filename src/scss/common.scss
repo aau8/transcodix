@@ -55,11 +55,6 @@
 }
 //========================================================================================================================================================
 
-// Логотип
-.logo {
-
-}
-
 .logo__path-main {
 
 	& path {
@@ -86,8 +81,6 @@
 		&::after {
 			content: '';
 			position: absolute;
-			// top: 11%;
-			// right: 2%;
 			top: 12px;
 			right: 12px;
 			display: block;
@@ -191,7 +184,6 @@
 }
 
 .section_fill {
-    // background: $frame-dark;
     padding: 50px 0;
 }
 //========================================================================================================================================================
@@ -203,10 +195,6 @@
 	align-items: center;
 	text-align: center;
     margin-bottom: 40px;
-
-    @media (max-width: $mobile-l) {
-        // margin-bottom: 30px;
-    }
 }
 
 .s-header__title {
@@ -228,10 +216,6 @@
 	@media (max-width: $mobile-m) {
 		font-size: 26px;
 	}
-}
-
-.s-header__subtitle {
-
 }
 
 .s-header__text {

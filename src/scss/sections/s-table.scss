@@ -11,18 +11,6 @@
 	}
 }
 
-.s-table__body-titles {
-
-	// & .s-table__block-row {
-	// 	padding: 0;
-	// }
-
-	// & .s-table__block-ceil-title {
-	// 	font-size: 24px;
-	// 	font-weight: 800;
-	// }
-}
-
 .s-table__block {
 	margin-bottom: 25px;
 }
@@ -69,11 +57,9 @@
 	width: 40%;
 	height: 100%;
 	display: block;
-	// padding-left: 58px;
 	padding: 0 16px 0 58px;
 
 	@media (max-width: $tablet) {
-		// padding-left: 16px;
 		padding: 0 12px 0 16px;
 	}
 
@@ -84,7 +70,6 @@
 
 .s-table__block-ceil {
 	position: relative;
-	// display: block;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -129,7 +114,6 @@
 	}
 
 	&.is-logo {
-		// width: 70%;
 
 		& svg {
 			max-width: 233px;

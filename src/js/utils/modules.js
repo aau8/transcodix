@@ -401,20 +401,6 @@ export function tabs() {
             })
         }
     }
-
-    // window.addEventListener('resize', e => {
-    //     tabRoller()
-    // })
-
-    // Ползунок у табов
-    // tabRoller()
-    function tabRoller(tab) {
-        const roller = tab.querySelector('[data-tab-roller]')
-        const tabActive = tab.querySelector('[data-tab-btn].is-active')
-
-        roller.style.width = tabActive.clientWidth - parseInt(window.getComputedStyle(tabActive).paddingRight) - parseInt(window.getComputedStyle(tabActive).paddingLeft) + 'px' // Определяем ширину ползунка
-        roller.style.left = tabActive.offsetLeft + parseInt(window.getComputedStyle(tabActive).paddingRight) + 'px' // Определяем отступ слева у ползунка
-    }
 }
 //========================================================================================================================================================
 
@@ -552,64 +538,10 @@ export function onlyDigit() {
 				e.preventDefault()
 			}
 
-			// console.log(e.key)
-
 			if (e.keyCode === 13) {
 				input.blur()
 			}
-
-			// if (e.code === 'ArrowUp' || e.code === 'ArrowDown') {
-			// 	e.preventDefault()
-
-			// 	const minValue = parseInt(input.getAttribute('min'))
-			// 	const maxValue = parseInt(input.getAttribute('max'))
-			// 	const value = parseInt(input.value)
-			// 	const step = parseInt(input.step)
-
-			// 	let incr = isNaN(step) ? 1 : step
-			// 	if (e.shiftKey) incr = isNaN(step) ? 10 : step * 10
-
-			// 	if (e.code === 'ArrowUp') {
-			// 		const sumValue = value + incr
-
-			// 		if (sumValue >= maxValue) {
-			// 			input.value = maxValue
-			// 		}
-			// 		else if (sumValue <= minValue) {
-			// 			input.value = minValue
-			// 		}
-			// 		else {
-			// 			input.value = sumValue
-			// 		}
-
-			// 		if (isNaN(value)) input.value = parseInt(input.getAttribute('value')) + 1
-			// 	}
-
-			// 	if (e.code === 'ArrowDown') {
-			// 		const sumValue = value - incr
-
-			// 		if (sumValue >= maxValue) {
-			// 			input.value = maxValue
-			// 		}
-			// 		else if (sumValue <= minValue) {
-			// 			input.value = minValue
-			// 		}
-			// 		else {
-			// 			input.value = sumValue
-			// 		}
-
-			// 		if (isNaN(value)) input.value = parseInt(input.getAttribute('value')) - 1
-			// 	}
-			// 	this.select()
-			// 	setValueInput([input])
-			// 	input.dispatchEvent(eventChangeInput)
-			// }
-
         })
-
-		// input.addEventListener('change-input', e => {
-		// 	console.log(input.value)
-		// })
     }
 
 	// Изменение атрибута value

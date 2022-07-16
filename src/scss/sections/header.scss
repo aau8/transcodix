@@ -247,7 +247,6 @@
 			}
 
 			@media (max-width: $hide-menu) {
-				// text-align: right;
 
 				& > a {
 					margin-bottom: 12px;
@@ -349,7 +348,6 @@
 
 .menu__tools {
 	display: none;
-	// display: flex;
 	flex-direction: column;
 
 	@media (max-width: $hide-menu) {
@@ -406,10 +404,6 @@
 	}
 }
 
-.header__tools-item_login {
-
-}
-
 .header__tools-item_free {
 	position: relative;
 
@@ -445,15 +439,11 @@
 }
 
 .menu__burger {
-	// position: absolute;
-	// top: 70px;
-	// right: var(--padding-right);
 
 	@media (max-width: $hide-menu) {
 		--size: 24px;
 
 		display: block;
-		// width: 24px;
 
 		& span {
 			width: 100%;

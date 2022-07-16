@@ -10,12 +10,6 @@
     box-sizing: border-box;
 }
 
-:focus,
-:active,
-:focus-visible {
-    // outline: none;
-}
-
 html,
 body {
     width: 100%;
@@ -51,10 +45,6 @@ textarea {
     font-family: inherit;
     color: inherit;
 }
-
-// input::-ms-clear {
-//     display: none;
-// }
 
 input[type="submit"] {
     cursor: pointer;
@@ -95,11 +85,6 @@ img, svg {
     height: 100%;
     object-fit: contain;
     vertical-align: top;
-}
-
-svg {
-    // fill: transparent;
-    // stroke: transparent;
 }
 
 h1,

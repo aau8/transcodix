@@ -14,10 +14,6 @@
 	display: flex;
 	align-items: center;
 
-	// display: grid;
-	// grid-template-columns: 1fr 1fr;
-	// gap: 0 90px;
-
 	@media (max-width: 930px) {
 		flex-direction: column-reverse;
 	}
@@ -51,17 +47,6 @@
 	}
 }
 
-// .stream__img {
-// 	min-width: 400px;
-// 	width: 100%;
-// 	height: 100%;
-
-// 	@media (max-width: 930px) {
-// 		max-width: 500px;
-// 		min-width: auto;
-// 	}
-// }
-
 .stream__slider-container {
 	position: relative;
 	min-width: 400px;
@@ -86,18 +71,6 @@
 	transform: translate(-50%, 0);
 	width: 95%;
 	height: 63%;
-}
-
-.swiper-wrapper {
-
-}
-
-.swiper-slide {
-
-}
-
-.stream__slider-img {
-
 }
 
 .stream__img {

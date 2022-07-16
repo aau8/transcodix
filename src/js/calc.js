@@ -22,23 +22,31 @@ class CalcTrans {
 		this.inputArr = Array.from(this.calcEl.querySelectorAll('input'))
 		this.inputCheckedArr = this.calcEl.querySelectorAll('input:checked')
 
-		// Если остался один чекбокс, то его нельзя будет сделать неактивным
+		this.settingBitrate()
+		this.setPrice()
+		this.setCoef()
+	}
+
+	settingBitrate() {
 		this.inputArr.forEach(input => {
 			const list = input.closest('.calc-setting__list')
 
 			input.addEventListener('change', e => {
+				// Если остался один активный чекбокс, то его нельзя будет сделать неактивным
 				if (list.querySelectorAll('input:checked').length < 1) {
 					input.checked = true
 				}
 
+				// Последние выбранные чекбоксы у блока Transcoding и FPS
 				const lastCheckedInputTrans = this.transInputArr[Math.max(...this.transInputArr.map((e, i) => [ e, i ]).filter(e => e[0].checked === true).map(e => e[1]))]
 				const lastCheckedInputFps = this.fpsInputArr[Math.max(...this.fpsInputArr.map((e, i) => [ e, i ]).filter(e => e[0].checked === true).map(e => e[1]))]
+
 				const transValue = lastCheckedInputTrans.value
 				const fpsValue = lastCheckedInputFps.value
 				const bitrateRangeEl = this.calcEl.querySelector('.calc-range__block.is-bitrate .calc-range')
 				let bitrateRange = [ 0, 100000 ]
 
-
+				// Условия для указания диапазона для битрейта
 				if (transValue.toLowerCase() === '360p') {
 
 					if (fpsValue.toLowerCase() === '<30') {
@@ -97,6 +105,7 @@ class CalcTrans {
 				const rangeValueMinEl = bitrateRangeEl.parentElement.querySelector('.calc-range__value.is-min')
 				const rangeValueMaxEl = bitrateRangeEl.parentElement.querySelector('.calc-range__value.is-max')
 
+				// Обновляем параметры ползунка битрейта
 				bitrateRangeEl.noUiSlider.updateOptions({
 					start: bitrateRange[0] + (bitrateRange[1] - bitrateRange[0]) / 2,
 					range: {
@@ -105,13 +114,15 @@ class CalcTrans {
 					},
 				})
 
+				// Обновляем минимальное и максимальное значение у подписей
 				rangeValueMinEl.textContent = String(bitrateRange[0]).replace(/0{3}$/, 'k')
 				rangeValueMaxEl.textContent = String(bitrateRange[1]).replace(/0{3}$/, 'k')
-
-				bitrateRangeEl.dataset.valueRec = bitrateRange
 			})
 		})
+	}
 
+	// Изменяем цену за час при клике по чекбоксам в блоке transcode и origin
+	setPrice() {
 		Array().concat(...this.transInputArr, ...this.originInputArr).forEach(input => {
 			input.addEventListener('change', e => {
 				const lastCheckedInput = Math.max(...this.transInputArr.map((e, i) => [ e, i ]).filter(e => e[0].checked === true).map(e => e[1]))
@@ -133,7 +144,10 @@ class CalcTrans {
 				this.calc()
 			})
 		})
+	}
 
+	// Изменяем коеффициент при изменении fps
+	setCoef() {
 		this.fpsInputArr.forEach(input => {
 			input.addEventListener('change', e => {
 				const lastCheckedInput = Math.max(...this.fpsInputArr.map((e, i) => [ e, i ]).filter(e => e[0].checked === true).map(e => e[1]))
@@ -200,17 +214,12 @@ if (document.querySelector('.calc')) {
 	rangeBlockElems.forEach(rangeBlock => {
 		const range = rangeBlock.querySelector('.calc-range')
 		const tf = rangeBlock.querySelector('.calc-range__tf input')
-		const valueMin = rangeBlock.querySelector('.calc-range__value.is-min')
-		const valueMax = rangeBlock.querySelector('.calc-range__value.is-max')
 
 		const noUiSlider = NoUiSlider.create(range, {
-			// start: transConfig['hours-video']['value'],
 			start: tf.value,
 			step: 1,
 			connect: [ true, false ],
 			range: {
-				// 'min': transConfig['hours-video']['range'][0],
-				// 'max': transConfig['hours-video']['range'][1],
 				'min': Number(tf.min),
 				'max': Number(tf.max)
 			},
@@ -219,11 +228,6 @@ if (document.querySelector('.calc')) {
 				thousand: ' ',
 			})
 		})
-
-		// range.NoUiSlider = noUiSlider
-
-		// valueMin.innerText = tf.min
-		// valueMax.innerText = tf.max
 
 		noUiSlider.on('update', arr => {
 
@@ -234,9 +238,7 @@ if (document.querySelector('.calc')) {
 		})
 
 		tf.addEventListener('input', e => {
-			// console.log(tf.value)
 			noUiSlider.set(tf.value)
-
 		})
 	})
 
