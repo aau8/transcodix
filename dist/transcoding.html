@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/style.min.css?_v=20220716123902">
+    <link rel="stylesheet" href="./css/style.min.css?_v=20220716145404">
 </head>
 <body>
 	<div class="wrapper">
@@ -307,7 +307,7 @@
 											<span class="calc-setting__title">Transcode to:</span>
 											<div class="calc-setting__list">
 												<div class="calc-setting__radio">
-													<input type="checkbox" name="transcode-to" value="360p" checked>
+													<input type="checkbox" name="transcode-to" value="360p">
 													<span>360p</span>
 												</div>
 												<div class="calc-setting__radio">
@@ -315,7 +315,7 @@
 													<span>720p</span>
 												</div>
 												<div class="calc-setting__radio">
-													<input type="checkbox" name="transcode-to" value="1080p" checked>
+													<input type="checkbox" name="transcode-to" value="1080p">
 													<span>1080p</span>
 												</div>
 												<div class="calc-setting__radio">
@@ -357,20 +357,20 @@
 											</button>
 											<div class="acc__body" data-acc-body>
 												<div class="acc__content">
-													<div class="calc-range__block is-bitrate">
+													<div class="calc-range__block is-bitrate has-fraction">
 														<div class="calc-range__header">
 															<span class="calc__title">Input stream Bitrate:</span>
 															<label class="tf calc-range__tf">
 																<div class="tf__field">
-																	<input type="text" name="user-" data-only-digit min="1" max="120" value="1">
+																	<input type="text" name="user-" data-only-digit min="0" max="100000" value="100000">
 																</div>
 															</label>
 														</div>
 														<div class="calc-range__body">
-															<div class="calc-range"></div>
+															<div class="calc-range" data-value-rec="0.75"></div>
 															<div class="calc-range__info">
 																<span class="calc-range__value is-min">1</span>
-																<span class="calc-range__value is-max">120</span>
+																<span class="calc-range__value is-max">100k</span>
 															</div>
 														</div>
 													</div>
@@ -568,6 +568,6 @@
         <div class="modal__bg"></div>
     </div>
 </div>
-    <script src="./js/bundle.min.js?_v=20220716123902"></script>
+    <script src="./js/bundle.min.js?_v=20220716145404"></script>
 </body>
 </html>

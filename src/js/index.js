@@ -88,9 +88,6 @@ import './fix-header.js'
 // Слайдеры
 import './sliders.js'
 
-// Ползунки
-import './range.js'
-
 // Калькулятор
 import './calc.js'
 
