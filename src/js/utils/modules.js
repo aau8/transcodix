@@ -46,7 +46,7 @@ export class Accordions {
     }
 
     init(selector) {
-        let _accArr = Array.from( null !== selector ? typeof(selector) === 'string' ? document.querySelectorAll(selector) : selector : document.querySelectorAll(`[${this.attrs.container}]`))
+        let _accArr = Array.from(selector != null ? typeof(selector) === 'string' ? document.querySelectorAll(selector) : selector : document.querySelectorAll(`[${this.attrs.container}]`))
         this.accArr = _accArr.map(e => Array.from(e.querySelectorAll(`[${this.attrs.acc}]`)))
         this._combAccArr = Array().concat(...this.accArr)
         this._combAccArr.forEach(_acc => this.close(_acc, false))
@@ -123,7 +123,7 @@ export class Accordions {
 
     _setCurrentAcc(_acc) {
         this._currentAcc.container = _acc.closest(`[${this.attrs.container}]`)
-        this._curren,tAcc.acc = _acc
+        this._currentAcc.acc = _acc
         this._currentAcc.toggler = _acc.querySelector(`[${this.attrs.toggler}]`)
         this._currentAcc.body = _acc.querySelector(`[${this.attrs.body}]`)
     }
@@ -538,19 +538,87 @@ export function onlyDigit() {
 
     for (let i = 0; i < inputDigitElems.length; i++) {
         const input = inputDigitElems[i];
-
-        input.addEventListener('keydown', e => {
-            if (e.key.search(/[\d\.]/)) {
-                e.preventDefault()
-            }
-        })
+		const eventChangeInput = new Event('change-input')
 
         input.addEventListener('paste', e => {
             if (e.clipboardData.getData('text/plain').search(/[\d\.]/)) {
                 e.preventDefault()
+				input.dispatchEvent(eventChangeInput)
             }
         })
+
+        input.addEventListener('keydown', e => {
+			if (e.key.search(/[\d\.]/) && e.key.search(/(Backspace|ArrowLeft|ArrowRight|Tab|Ctrl|Shift)/)) {
+				e.preventDefault()
+			}
+
+			// console.log(e.key)
+
+			if (e.keyCode === 13) {
+				input.blur()
+			}
+
+			// if (e.code === 'ArrowUp' || e.code === 'ArrowDown') {
+			// 	e.preventDefault()
+
+			// 	const minValue = parseInt(input.getAttribute('min'))
+			// 	const maxValue = parseInt(input.getAttribute('max'))
+			// 	const value = parseInt(input.value)
+			// 	const step = parseInt(input.step)
+
+			// 	let incr = isNaN(step) ? 1 : step
+			// 	if (e.shiftKey) incr = isNaN(step) ? 10 : step * 10
+
+			// 	if (e.code === 'ArrowUp') {
+			// 		const sumValue = value + incr
+
+			// 		if (sumValue >= maxValue) {
+			// 			input.value = maxValue
+			// 		}
+			// 		else if (sumValue <= minValue) {
+			// 			input.value = minValue
+			// 		}
+			// 		else {
+			// 			input.value = sumValue
+			// 		}
+
+			// 		if (isNaN(value)) input.value = parseInt(input.getAttribute('value')) + 1
+			// 	}
+
+			// 	if (e.code === 'ArrowDown') {
+			// 		const sumValue = value - incr
+
+			// 		if (sumValue >= maxValue) {
+			// 			input.value = maxValue
+			// 		}
+			// 		else if (sumValue <= minValue) {
+			// 			input.value = minValue
+			// 		}
+			// 		else {
+			// 			input.value = sumValue
+			// 		}
+
+			// 		if (isNaN(value)) input.value = parseInt(input.getAttribute('value')) - 1
+			// 	}
+			// 	this.select()
+			// 	setValueInput([input])
+			// 	input.dispatchEvent(eventChangeInput)
+			// }
+
+        })
+
+		// input.addEventListener('change-input', e => {
+		// 	console.log(input.value)
+		// })
     }
+
+	// Изменение атрибута value
+	function setValueInput(selectors, value) {
+		for (let i = 0; i < selectors.length; i++) {
+			const input = selectors[i];
+			input.setAttribute('value', value == undefined ? parseInt(input.value) : parseInt(value))
+		}
+	}
 }
 //========================================================================================================================================================
 

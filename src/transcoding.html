@@ -210,9 +210,9 @@
 					</div>
 				</div>
 			</section>
-			<section class="section calc" style="display:none;">
+			<section class="section calc">
 				<div class="calc__container">
-					<div class="s-header">
+					<div class="s-header calc__s-header">
 						<h2 class="s-header__title">Calculator</h2>
 					</div>
 					<div class="calc__body">
@@ -220,12 +220,15 @@
 							<h3 class="calc__section-title">Live Transcoding pricing</h3>
 							<div class="calc__block is-trans">
 								<div class="calc__tools">
-									<div class="calc-range__block">
+									<div class="calc__total is-mob">
+										<div class="calc__total-text">Total: <span>3.2$</span></div>
+									</div>
+									<div class="calc-range__block is-time">
 										<div class="calc-range__header">
 											<span class="calc__title">Hours of source video:</span>
-											<label class="tf">
-												<div class="tf__field">
-													<input type="text" name="user-">
+											<label class="tf calc-range__tf">
+												<div class="tf__field" data-value="0">
+													<input type="text" name="user-" data-only-digit min="1" max="1000000" value="400">
 												</div>
 											</label>
 										</div>
@@ -233,13 +236,198 @@
 											<div class="calc-range"></div>
 											<div class="calc-range__info">
 												<span class="calc-range__value is-min">1</span>
-												<span class="calc-range__value is-max">100</span>
+												<span class="calc-range__value is-max">1М</span>
+											</div>
+										</div>
+									</div>
+									<div class="calc__settings">
+										<div class="calc-setting is-origin">
+											<span class="calc-setting__title">Origin:</span>
+											<div class="calc-setting__list">
+												<div class="calc-setting__radio">
+													<input type="radio" name="origin" value="1080p" checked>
+													<span>1080p</span>
+												</div>
+												<div class="calc-setting__radio">
+													<input type="radio" name="origin" value="4K">
+													<span>4K</span>
+												</div>
+												<div class="calc-setting__radio">
+													<input type="radio" name="origin" value="8K">
+													<span>8K</span>
+												</div>
+											</div>
+										</div>
+										<div class="calc-setting is-trans">
+											<span class="calc-setting__title">Transcode to:</span>
+											<div class="calc-setting__list">
+												<div class="calc-setting__radio">
+													<input type="checkbox" name="transcode-to" value="360p" checked>
+													<span>360p</span>
+												</div>
+												<div class="calc-setting__radio">
+													<input type="checkbox" name="transcode-to" value="720p" checked>
+													<span>720p</span>
+												</div>
+												<div class="calc-setting__radio">
+													<input type="checkbox" name="transcode-to" value="1080p" checked>
+													<span>1080p</span>
+												</div>
+												<div class="calc-setting__radio">
+													<input type="checkbox" name="transcode-to" value="4K" disabled>
+													<span>4K</span>
+												</div>
+												<div class="calc-setting__radio">
+													<input type="checkbox" name="transcode-to" value="8K" disabled>
+													<span>8K</span>
+												</div>
+											</div>
+										</div>
+										<div class="calc-setting is-fps">
+											<span class="calc-setting__title">FPS:</span>
+											<div class="calc-setting__list">
+												<div class="calc-setting__radio">
+													<input type="checkbox" name="fps" value="<30">
+													<span>&lt;30</span>
+												</div>
+												<div class="calc-setting__radio">
+													<input type="checkbox" name="fps" value="30-60" checked>
+													<span>30-60</span>
+												</div>
+												<div class="calc-setting__radio">
+													<input type="checkbox" name="fps" value="60-90">
+													<span>60-90</span>
+												</div>
+												<div class="calc-setting__radio">
+													<input type="checkbox" name="fps" value="90-120">
+													<span>90-120</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="calc__acc-container" data-acc-container>
+										<div class="acc calc__acc" data-acc>
+											<button class="acc__toggle" data-acc-toggler>
+												<span class="acc__toggle-title">Custom bitrate</span>
+											</button>
+											<div class="acc__body" data-acc-body>
+												<div class="acc__content">
+													<div class="calc-range__block is-bitrate">
+														<div class="calc-range__header">
+															<span class="calc__title">Input stream Bitrate:</span>
+															<label class="tf calc-range__tf">
+																<div class="tf__field">
+																	<input type="text" name="user-" data-only-digit min="1" max="120" value="1">
+																</div>
+															</label>
+														</div>
+														<div class="calc-range__body">
+															<div class="calc-range"></div>
+															<div class="calc-range__info">
+																<span class="calc-range__value is-min">1</span>
+																<span class="calc-range__value is-max">120</span>
+															</div>
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="calc__info">
-
+									<div class="calc__total is-pc">
+										<div class="calc__total-text">Total: <span>3.2$</span></div>
+									</div>
+									<div class="calc-table">
+										<div class="calc-table__ceil is-price">
+											<span class="calc-table__header">Price/Hour</span>
+											<div class="calc-table__body">
+												<ul class="calc-table__list">
+													<li class="is-active" data-trans-max="1080p">0.04$</li>
+													<li data-trans-max="4K">0.10$</li>
+													<li data-trans-max="8K">0.35$</li>
+												</ul>
+											</div>
+										</div>
+										<div class="calc-table__ceil is-trans">
+											<span class="calc-table__header">Transcode to</span>
+											<div class="calc-table__body">
+												<ul class="calc-table__list">
+													<li>360p/720p/1080p</li>
+													<li>360p/720p/1080p/4K</li>
+													<li>360p/720p/1080p/4K/8K</li>
+												</ul>
+											</div>
+										</div>
+										<div class="calc-table__ceil is-coef">
+											<span class="calc-table__header">Coefficient</span>
+											<div class="calc-table__body">
+												<ul class="calc-table__list">
+													<li data-coef-max="<30">1</li>
+													<li class="is-active" data-coef-max="30-60">2</li>
+													<li data-coef-max="60-90">3</li>
+													<li data-coef-max="90-120">4</li>
+												</ul>
+											</div>
+										</div>
+										<div class="calc-table__ceil is-fps">
+											<span class="calc-table__header">FPS</span>
+											<div class="calc-table__body">
+												<ul class="calc-table__list">
+													<li>&lt;30</li>
+													<li>30-60</li>
+													<li>60-90</li>
+													<li>90-120</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="calc__correct has-contour has-circle">
+							Using our CDN + Transcoding you get 5 times lower  prices on market
+							<div class="contour is-dark"></div>
+						</div>
+						<div class="calc__section">
+							<h3 class="calc__section-title">Content Delivery pricing</h3>
+							<div class="calc__block is-deliv">
+								<div class="calc__tools">
+									<div class="calc__total is-mob">
+										<div class="calc__total-text">Total: <span>3.2$</span></div>
+									</div>
+									<div class="calc-range__block is-deliv">
+										<div class="calc-range__header">
+											<span class="calc__title">GB delivered:</span>
+											<label class="tf calc-range__tf">
+												<div class="tf__field">
+													<input type="text" name="user-" data-only-digit min="0" max="1000000" value="400">
+												</div>
+											</label>
+										</div>
+										<div class="calc-range__body">
+											<div class="calc-range"></div>
+											<div class="calc-range__info">
+												<span class="calc-range__value is-min">1</span>
+												<span class="calc-range__value is-max">1M</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="calc__info">
+									<div class="calc__total is-pc">
+										<div class="calc__total-text">Total: <span>3.2$</span></div>
+									</div>
+									<div class="calc-table">
+										<div class="calc-table__ceil is-price">
+											<span class="calc-table__header">Cost/GB</span>
+											<div class="calc-table__body">
+												<ul class="calc-table__list">
+													<li class="calc-deliv-price-gb">0.008$</li>
+												</ul>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>

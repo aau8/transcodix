@@ -8,13 +8,13 @@ window.addEventListener('load', e => {
 	if (firstScreen) {
 		const main = firstScreen.querySelector('.main')
 		const whyUs = firstScreen.querySelector('.why-us')
-	
+
 		firstScreen.style.minHeight = main.clientHeight + whyUs.clientHeight + 'px'
 	}
 })
 
 // Аккордеон
-// const accordions = new DismalModules.Accordions()
+const accordions = new DismalModules.Accordions()
 
 // Модальные окна
 const modals = new DismalModules.Modals()
@@ -35,7 +35,7 @@ DismalModules.labelTextfield()
 // DismalModules.fixElemOverFooter()
 
 // Только цифры и точка в инпутах
-// DismalModules.onlyDigit()
+DismalModules.onlyDigit()
 
 
 // Открытие/закрытие моб. меню
