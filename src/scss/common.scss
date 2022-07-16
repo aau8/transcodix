@@ -98,6 +98,14 @@
 		}
 	}
 
+	&::before {
+		content: attr(data-label);
+		font-size: 22px;
+		font-weight: 300;
+		line-height: 1;
+		display: block;
+	}
+
 	@media (max-width: $mobile-l) {
 		--size-circle: 16px;
 	}
