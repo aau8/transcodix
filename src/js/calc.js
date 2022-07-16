@@ -31,14 +31,11 @@ class CalcTrans {
 					input.checked = true
 				}
 
-
 				const lastCheckedInputTrans = this.transInputArr[Math.max(...this.transInputArr.map((e, i) => [ e, i ]).filter(e => e[0].checked === true).map(e => e[1]))]
 				const lastCheckedInputFps = this.fpsInputArr[Math.max(...this.fpsInputArr.map((e, i) => [ e, i ]).filter(e => e[0].checked === true).map(e => e[1]))]
 				const transValue = lastCheckedInputTrans.value
 				const fpsValue = lastCheckedInputFps.value
 				const bitrateRangeEl = this.calcEl.querySelector('.calc-range__block.is-bitrate .calc-range')
-
-				// console.log(transValue.toLowerCase())
 				let bitrateRange = [ 0, 100000 ]
 
 
@@ -97,15 +94,11 @@ class CalcTrans {
 					}
 				}
 
-				// console.dir(bitrateRangeEl)
-
-				// bitrateRangeEl.noUiSlider.set(bitrateRange)
-
 				const rangeValueMinEl = bitrateRangeEl.parentElement.querySelector('.calc-range__value.is-min')
 				const rangeValueMaxEl = bitrateRangeEl.parentElement.querySelector('.calc-range__value.is-max')
 
 				bitrateRangeEl.noUiSlider.updateOptions({
-					start: bitrateRange[1],
+					start: bitrateRange[0] + (bitrateRange[1] - bitrateRange[0]) / 2,
 					range: {
 						'min': bitrateRange[0],
 						'max': bitrateRange[1],
@@ -193,15 +186,6 @@ class CalcTrans {
 		const time = parseInt(this.calcEl.querySelector('.calc-range__block.is-time .tf__field').dataset.value.replace(/\s/g, ''))
 		const price = parseFloat(this.calcEl.querySelector('.calc-table__ceil.is-price li.is-active').innerText.replace('$', ''))
 		const coef = parseInt(this.calcEl.querySelector('.calc-table__ceil.is-coef li.is-active').innerText)
-		// const bitrate = parseFloat(this.calcEl.querySelector('.calc-range__block.is-bitrate .tf input').value)
-		// const bitrateRec = parseFloat(this.calcEl.querySelector('.calc-range__block.is-bitrate .calc-range').dataset.valueRec)
-		// let bitrateVal = 1
-
-
-		// if (bitrate > bitrateRec) {
-		// 	const diff = bitrate - bitrateRec
-		// 	console.log(bitrate, bitrateRec)
-		// }
 
 		this.totalElems.forEach(total => {
 			total.innerHTML = Math.round(time * price * coef * 100) / 100 + '$'
