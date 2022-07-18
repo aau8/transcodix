@@ -126,6 +126,10 @@
 		border: none;
 		padding: 0;
 	}
+
+	@media (max-width: $mobile-l) {
+		min-width: auto;
+	}
 }
 
 // Ползунок

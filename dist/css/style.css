@@ -5084,6 +5084,10 @@ body {
     margin-bottom: 30px;
   }
 
+  .calc__tools {
+    min-width: auto;
+  }
+
   .calc__title {
     font-size: 19px;
     line-height: 1.15;
